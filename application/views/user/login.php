@@ -1,5 +1,5 @@
-
-  <div class="container-scroller">
+<body>
+  <div class="container-scroller" style="font-family: 'Raleway', sans-serif;">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
       <div class="content-wrapper auth p-0 theme-two">
         <div class="row d-flex align-items-stretch">
