@@ -20,9 +20,9 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
 
-  <link rel="stylesheet" href="<?php echo base_url()?>assets/vendor/css/main.css"/>
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
   <link rel="stylesheet" href="<?php echo base_url()?>assets/vendor/css/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="<?php echo base_url()?>assets/vendor/images/favicon.png" />
 </head>
-<body style='font-family: 'Raleway', sans-serif;'>
+<body>
