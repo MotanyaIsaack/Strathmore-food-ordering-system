@@ -50,5 +50,19 @@
                 </div>
             </div>
         </div>
+        <div class="col s12 m12 l9">
+            <div class="row "style="padding:30px 40px;">
+                <div class="col s5 m5 l5">
+                    <div class="card orders-card">
+                        <div class="card-title">
+                            Active Orders
+                        </div>
+                        <div class="card-content">
+                            <span>$active_orders</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </main>

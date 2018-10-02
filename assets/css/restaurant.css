@@ -18,3 +18,6 @@ body{
 .sidebar-links a:hover{
     color: #505050;
 }
+.orders-card .card-title{
+    padding: 10px;
+}
