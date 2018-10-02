@@ -21,3 +21,6 @@ body{
 .orders-card .card-title{
     padding: 10px;
 }
+.orders-card .card-content{
+    font-size: 18px;
+}
