@@ -5,5 +5,10 @@
             $this->load->view('restaurant/restaurant-owner');
             $this->load->view('restaurant/footer');
         }
+        public function viewMenu(){
+            $this->load->view('restaurant/header');
+            $this->load->view('restaurant/restaurant-menu.php');
+            $this->load->view('restaurant/footer.php');
+        }
     }
 ?>

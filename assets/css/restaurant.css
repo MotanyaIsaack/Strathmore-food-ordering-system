@@ -12,9 +12,13 @@ main {
 .top-nav {
 	background-color: white;
 }
-
-#user-functions li a {
-	color: #F05742;
+#user-functions li a{
+	color: #191919;
+	transition: all .2s ease-out;
+}
+#user-functions li a:hover {
+	background-color: #F05742;
+	color: white;
 }
 
 .dropdown-trigger:focus {
@@ -27,14 +31,14 @@ main {
     
 }
 #sidenav-link a{
-    color: #505050;
+    color: white;
     transition: color .2s ease-in;
     text-transform: uppercase;
 	font-size: 18px;
 	letter-spacing: 2px;
 }
 #sidenav-link a:hover{
-    color: white;
+    color:#3ca03c;
 }
 #sidenav-link{
     border-bottom: solid .2px white;

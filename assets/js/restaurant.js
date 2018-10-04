@@ -4,4 +4,5 @@ $(document).ready(function(){
         hover: true,
         constrainWidth: false
     });
+    $('.sidenav').sidenav();
 })

@@ -1,5 +1,6 @@
 <nav class="top-nav">
     <div class="nav-wrapper">
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
         <a href="#" class="brand-logo black-text" style="margin-top:10px; margin-left:15px;">
             <img src="<?php echo base_url();?>assets/img/eatplicity-logo.png" alt="company-logo" class="responsive-img">
         </a>
@@ -8,6 +9,15 @@
         </ul>
     </div>
 </nav>
+<!-- Mobile Menu -->
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="<?php echo base_url();?>restaurant/viewMenu">Our Menu</a></li>
+    <li><a href="">Orders Received</a></li>
+    <li><a href=""">Payments</a></li>
+    <li><a href="">Settings</a></li>
+    <li><a href="">Logout</a></li>
+
+</ul>
 <ul id="user-functions" class="dropdown-content">
   <li><a href="#!">My Restaurant<i class="material-icons left">more_horiz</i></a></li>
   <li class="divider"></li>
@@ -33,7 +43,7 @@
             </div>
             <div class="row">
                 <div class="col s12 m12 l12" id="sidenav-link">
-                    <a href="">Our Menu</a>
+                    <a href="<?php echo base_url();?>restaurant/viewMenu">Our Menu</a>
                 </div>
             </div>
             <div class="row">
@@ -79,7 +89,7 @@
                     <div>&nbsp;</div>
                 </div>
                 <div class="col s12 m12 l5 card-container">
-                    <a href="">
+                    <a href="<?php echo base_url();?>restaurant/viewMenu">
                         <div class="card">
                             <div class="card-title"id="card-links">
                                 Edit Menu
