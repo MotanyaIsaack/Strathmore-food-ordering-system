@@ -54,6 +54,8 @@ $route['Insert/savedata'] = 'Insert/savedata';
 $route['users/form_validation'] = 'users/form_validation';
 $route['users/login'] = 'users/login';
 $route['Logindata/checklogin'] = 'Logindata/checklogin';
+$route['restaurant/view'] = 'restaurant/view';
+$route['restaurant/viewMenu'] = 'restaurant/viewMenu';
 
 $route['default_controller'] = 'users/view';
 $route['(:any)'] = 'users/view/$1';
