@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2018 at 07:03 AM
+-- Generation Time: Oct 10, 2018 at 08:57 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -25,30 +25,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Table structure for table `cart`
 --
 
-CREATE TABLE `menu` (
-  `MenuID` int(11) NOT NULL,
+CREATE TABLE `cart` (
+  `CartID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
+  `ItemID` int(11) NOT NULL,
   `RestaurantID` int(11) NOT NULL,
-  `Menu` text NOT NULL,
-  `ItemDesciption` text NOT NULL
+  `Price` int(11) NOT NULL,
+  `PaymentStatus` tinyint(1) NOT NULL,
+  `OrderStatus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Table structure for table `menu`
 --
 
-CREATE TABLE `orders` (
-  `OrderID` int(11) NOT NULL,
-  `MenuID` int(11) NOT NULL,
-  `CustomerID` int(11) NOT NULL,
-  `Price` int(11) NOT NULL,
-  `PaymentMethod` text NOT NULL,
-  `PaymentStatus` text NOT NULL,
-  `OrderStatus` text NOT NULL
+CREATE TABLE `menu` (
+  `ItemID` int(11) NOT NULL,
+  `Name` text NOT NULL,
+  `Value` text NOT NULL,
+  `RestaurantID` int(11) NOT NULL,
+  `Description` text NOT NULL,
+  `Price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -60,9 +62,11 @@ CREATE TABLE `orders` (
 CREATE TABLE `restaurants` (
   `RestaurantID` int(11) NOT NULL,
   `Name` text NOT NULL,
-  `Owner` text NOT NULL,
+  `Description` text NOT NULL,
+  `OwnerID` int(11) NOT NULL,
   `Location` text NOT NULL,
-  `Rating` int(11) NOT NULL
+  `Rating` int(11) NOT NULL,
+  `Image` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -78,47 +82,78 @@ CREATE TABLE `users` (
   `Gender` text NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Type` text NOT NULL,
-  `Status` tinyint(1) NOT NULL
+  `Status` tinyint(1) NOT NULL,
+  `Image` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`ID`, `Name`, `Email`, `Gender`, `Password`, `Type`, `Status`) VALUES
-(1, 'Jane Doe', 'jd@gmail.com', '', 'Janedoe', 'User', 0),
-(2, 'Ariel', 'ariel@gmail.com', 'Female', '$2y$10$kAzen3BGZnJgZjXUMD6EvOig30f6aQhvzx4YbK3Abmq9PH/J5RI5e', 'User', 0),
-(3, 'Winter', 'winter@gmail.com', 'Male', '$2y$10$g2IKTIzzRogGNu3UfKX5.ehTbH7CmJ8.XHANVYmWEv4scK.Uv2que', 'User', 0),
-(5, 'sweet', 'sweet@yahoo.com', 'Female', '$2y$10$iWz8sji2MZEQcbM.nkA72eBSX4MAMrewVce2g0jXzrhX.fnAj15uS', 'User', 0),
-(99099, 'Anna Mae', 'amae@yahoo.com', 'Female', '$2y$10$o10y5qtYrPN6d6kxQh6oru3ZjWMPb9cwwwWbKapnHIBA0kZi96DR.', 'User', 0);
+INSERT INTO `users` (`ID`, `Name`, `Email`, `Gender`, `Password`, `Type`, `Status`, `Image`) VALUES
+(1, 'Jane Doe', 'jd@gmail.com', '', 'Janedoe', 'User', 0, ''),
+(2, 'Ariel', 'ariel@gmail.com', 'Female', '$2y$10$kAzen3BGZnJgZjXUMD6EvOig30f6aQhvzx4YbK3Abmq9PH/J5RI5e', 'User', 0, ''),
+(3, 'Winter', 'winter@gmail.com', 'Male', '$2y$10$g2IKTIzzRogGNu3UfKX5.ehTbH7CmJ8.XHANVYmWEv4scK.Uv2que', 'User', 0, ''),
+(4, 'may', 'may@yahoo.com', 'Female', '$2y$10$1Uqcz1RNZ3BIZ3w526IlEeiL0MVyDhW6dLUjdP67JPFYx0oTrgmVS', 'User', 0, ''),
+(5, 'sweet', 'sweet@yahoo.com', 'Female', '$2y$10$iWz8sji2MZEQcbM.nkA72eBSX4MAMrewVce2g0jXzrhX.fnAj15uS', 'User', 0, ''),
+(99099, 'Anna Mae', 'amae@yahoo.com', 'Female', '$2y$10$o10y5qtYrPN6d6kxQh6oru3ZjWMPb9cwwwWbKapnHIBA0kZi96DR.', 'User', 0, '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`CartID`),
+  ADD KEY `UserID` (`UserID`,`ItemID`,`RestaurantID`),
+  ADD KEY `RestaurantID` (`RestaurantID`),
+  ADD KEY `ItemID` (`ItemID`);
+
+--
 -- Indexes for table `menu`
 --
 ALTER TABLE `menu`
-  ADD PRIMARY KEY (`MenuID`);
-
---
--- Indexes for table `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`OrderID`);
+  ADD PRIMARY KEY (`ItemID`),
+  ADD KEY `RestaurantID` (`RestaurantID`);
 
 --
 -- Indexes for table `restaurants`
 --
 ALTER TABLE `restaurants`
-  ADD PRIMARY KEY (`RestaurantID`);
+  ADD PRIMARY KEY (`RestaurantID`),
+  ADD KEY `OwnerID` (`OwnerID`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `users` (`ID`),
+  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`RestaurantID`) REFERENCES `restaurants` (`RestaurantID`),
+  ADD CONSTRAINT `cart_ibfk_3` FOREIGN KEY (`ItemID`) REFERENCES `menu` (`ItemID`);
+
+--
+-- Constraints for table `menu`
+--
+ALTER TABLE `menu`
+  ADD CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`RestaurantID`) REFERENCES `restaurants` (`RestaurantID`);
+
+--
+-- Constraints for table `restaurants`
+--
+ALTER TABLE `restaurants`
+  ADD CONSTRAINT `restaurants_ibfk_1` FOREIGN KEY (`OwnerID`) REFERENCES `cart` (`UserID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
