@@ -11,13 +11,13 @@
     <style>
         img
         {
-            margin-left: 451px;
+            margin-left: 300px;
         }
 
         h1 
         {
             color: maroon;
-            margin-left: 412px;
+            margin-left: 240px;
             font-family: 'Charmonman', cursive;
             font-size: 60px;
         } 

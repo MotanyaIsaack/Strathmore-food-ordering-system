@@ -23586,17 +23586,10 @@ div.tagsinput {
   .auth.theme-two .banner-section .slide-content {
     width: 100%; }
     .auth.theme-two .banner-section .slide-content.bg-1 {
-<<<<<<< HEAD
       background: url("../images/auth/2.jpg") no-repeat center center;
       background-size: cover; }
     .auth.theme-two .banner-section .slide-content.bg-2 {
       background: url("../images/auth/1.jpg") no-repeat center center;
-=======
-      background: url("../images/auth/login_2.jpg") no-repeat center center;
-      background-size: cover; }
-    .auth.theme-two .banner-section .slide-content.bg-2 {
-      background: url("../images/auth/register_2.jpg") no-repeat center center;
->>>>>>> f52ed86f44ddc8b70492a41516f5f57e6d758b13
       background-size: cover; }
 
 /* Error */

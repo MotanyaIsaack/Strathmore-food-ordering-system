@@ -15,6 +15,42 @@
 			$this->load->view('templates/footer');
 		}
 	
+		public function dash()
+		{
+			$this->load->view('user/student-dash');
+		}
+	
+		public function tonis()
+		{
+			$this->load->view('user/tonis');
+		}
+
+		public function lolanes()
+		{
+			$this->load->view('user/lolanes');
+		}
+
+		public function shawarma()
+		{
+			$this->load->view('user/shawarma');
+		}
+
+		public function cart()
+		{
+			$this->load->view('user/cart');
+		}
+
+		public function checkout()
+		{
+			$this->load->view('user/checkout');
+		}
+		
+		public function logout()
+		{
+			$this->load->view('user/exit');
+			unset($_SESSION);
+		}
+		
 		public function __construct()
 		{
 			//call CodeIgniter's default Constructor
@@ -53,8 +89,9 @@
 					$e=$this->input->post('email'),
 					$g=$this->input->post('sex'),
 					$uPass=$this->input->post('pass'),
-					$t="User",
+					$t="Student",
 					$s="0",
+					$img="xyz",
 					$p=password_hash($uPass, PASSWORD_BCRYPT)
 				);
 
@@ -80,8 +117,8 @@
 					{
 						echo "Successful Login";
 						$_SESSION['user_logged'] = TRUE;
-						// $_SESSION['userID'] = $user->username;
-						// redirect("user/regiter")
+						$_SESSION['userID'] = $user->username;
+						redirect("Users/dash");
 					}
 					else
 					{
@@ -95,10 +132,7 @@
 
 		}
 
-		public function logout()
-		{
-			unset($_SESSION);
-		}
+
 
 	}
 ?>
