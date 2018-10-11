@@ -1,37 +1,32 @@
-<nav class="sidebar sidebar-offcanvas sidebar-dark" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item nav-profile">
-            <img src="<?= base_url();?>assets/vendor/images/faces/face1.jpg" alt="profile image">
-            <p class="text-center font-weight-medium">ADMIN</p>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
-              <i class="menu-icon icon-diamond"></i>
-              <span class="menu-title">Dashboard</span>
-              <div class="badge badge-success"></div>
-            </a>
-          </li>
-                   
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
-              <i class="menu-icon icon-equalizer"></i>
-              <span class="menu-title">Registration</span>
-              <div class="badge badge-success">1</div>
-            </a>
-            <div class="collapse" id="ui-advanced">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="pages/ui-features/dragula.html">Restaurant</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <i class="menu-icon icon-pie-chart"></i>
-              <span class="menu-title">Sign Out</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+<aside class="sidebar">
+                <div class="scrollbar-inner">
+                    <div class="user">
+                        <div class="user__info" data-toggle="dropdown">
+                            <img class="user__img" src="demo/img/profile-pics/8.jpg" alt="">
+                            <div>
+                                <div class="user__name">Malinda Hollaway</div>
+                                <div class="user__email">malinda-h@gmail.com</div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">View Profile</a>
+                            <!-- <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="#">Logout</a> -->
+                        </div>
+                    </div>
+
+                    <ul class="navigation">
+                        <li class="navigation__active"><a href=""><i class="zmdi zmdi-home"></i> Home</a></li>
+
+                        <li class="navigation__sub">
+                            <a href="#"><i class="zmdi zmdi-home"></i> Manage</a>
+
+                            <ul>
+                                <li><a href="hidden-sidebar.html">Restaurants</a></li>
+                                <li><a href="boxed-layout.html">Students</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
