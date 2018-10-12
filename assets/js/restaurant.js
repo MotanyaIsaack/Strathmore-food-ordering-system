@@ -5,4 +5,6 @@ $(document).ready(function(){
         constrainWidth: false
     });
     $('.sidenav').sidenav();
+    $('.modal').modal();
+     
 })

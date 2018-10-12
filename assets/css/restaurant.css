@@ -65,3 +65,54 @@ main {
 	background-color:#191919;
 	color: #3ca03c;
 }
+.menu-options-btn{
+	background-color: #F05742;
+	color: white;
+}
+.menu-options-btn:hover{
+	background-color: white;
+	color:#505050; 
+}
+#menu-container{
+	max-height: 300px;
+	overflow-y: scroll;
+}
+.menu-delete-icon{
+	background-color:#FF0800;
+	color:white;
+}
+.menu-delete-icon:hover{
+	color: #191919;
+	background: white;
+}
+.menu-edit-icon{
+	background-color:#039BE5;
+	color: white;
+}
+.menu-edit-icon:hover{
+	color: #191919;
+	background-color: white;
+}
+.modal-header{
+	font-size: 22px;
+	color:#F05742;
+}
+#create-menu{
+	overflow: hidden;
+}
+#delete-menu{
+	overflow: hidden;
+}
+
+.hide{
+	display:none;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+#order-container{
+	max-height: 600px;
+	overflow-y: scroll;
+}
