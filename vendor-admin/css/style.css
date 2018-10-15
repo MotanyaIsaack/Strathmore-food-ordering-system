@@ -1,0 +1,28 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
+div{
+    font-family: 'Raleway', sans-serif;
+}
+form{
+    font-family: 'Raleway', sans-serif;
+}
+.search__text{
+    font-family: 'Raleway', sans-serif;
+}
+.form-restaurant{
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    width: 50%;
+    /* font-weight:700;  */
+}
+.btn-register-restaurant{
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+}
+.select{
+    font-family: 'Raleway', sans-serif;
+}
+.form-control{
+    font-family: 'Raleway', sans-serif;
+}

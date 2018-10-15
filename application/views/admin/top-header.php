@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="header__logo hidden-sm-down">
-                    <h1><a href="index.html">SU Food Ordering System</a></h1>
+                    <h1><a href="<?= base_url("admin/overview");?>">SU Food Ordering System</a></h1>
                 </div>
 
                 <form class="search">
@@ -42,8 +42,8 @@
                                 Theme Switch
 
                                 <div class="btn-group btn-group-toggle btn-group--colors" data-toggle="buttons">
-                                    <label class="btn bg-green active"><input type="radio" value="green" autocomplete="off" checked></label>
-                                    <label class="btn bg-blue"><input type="radio" value="blue" autocomplete="off"></label>
+                                    <label class="btn bg-green"><input type="radio" value="green" autocomplete="off" checked></label>
+                                    <label class="btn bg-blue active"><input type="radio" value="blue" autocomplete="off"></label>
                                     <label class="btn bg-red"><input type="radio" value="red" autocomplete="off"></label>
                                     <label class="btn bg-orange"><input type="radio" value="orange" autocomplete="off"></label>
                                     <label class="btn bg-teal"><input type="radio" value="teal" autocomplete="off"></label>
