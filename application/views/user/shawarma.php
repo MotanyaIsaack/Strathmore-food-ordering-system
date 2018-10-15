@@ -22,6 +22,17 @@
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <style type="text/css">
+            table {
+                border: 10px;
+                width:100%;
+                color: black;
+                text-align: left;
+            }
+            .new {
+                margin-left: 195px;
+            }
+        </style>
     </head>
     <body>
         <!-- <div id="preloader">
@@ -105,7 +116,7 @@
         <div class="container">
             <div class="text-center">
                 
-                <h1 class="title-1">SHAWARMA Menu</h1>  
+                <h1 class="title-1">SHAWARMA'S Menu</h1>  
                 <h4>
                                                 <span>
                                                     <i class="ion-star"></i>
@@ -135,111 +146,47 @@
 <br><br>
                                         </div>
                                     </div>
-                                        <div class="row menu-filter-items">
-                <div class=" start breakfast col-md-4 margin-b-30 menu-item">
-                    <div class="menu-box clearfix ">
-                        <div class="menu-content">
-                            <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                            <p>pellentesque enim. Aliquam tempor</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class=" start col-md-4 margin-b-30 menu-item">
-                    <div class="menu-box clearfix ">
-                        <div class="menu-content">
-                            <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                            <p>pellentesque enim. Aliquam tempor</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class=" start col-md-4 margin-b-30 menu-item">
-                    <div class="menu-box clearfix ">
-                        <div class="menu-content">
-                            <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                            <p>pellentesque enim. Aliquam tempor</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class=" start breakfast col-md-4 margin-b-30 menu-item">
-                    <div class="menu-box clearfix ">
-                        <div class="menu-content">
-                            <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                            <p>pellentesque enim. Aliquam tempor</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class=" lunch col-md-4 margin-b-30 menu-item">
-                    <div class="menu-box clearfix ">
-                        <div class="menu-content">
-                            <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                            <p>pellentesque enim. Aliquam tempor</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class=" lunch col-md-4 margin-b-30 menu-item">
-                    <div class="menu-box clearfix ">
-                        <div class="menu-content">
-                            <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                            <p>pellentesque enim. Aliquam tempor</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class=" dinner breakfast col-md-4 margin-b-30 menu-item">
-                    <div class="menu-box clearfix ">
-                        <div class="menu-content">
-                            <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                            <p>pellentesque enim. Aliquam tempor</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class=" start dinner breakfast col-md-4 margin-b-30 menu-item">
-                    <div class="menu-box clearfix ">
-                        <div class="menu-content">
-                            <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                            <p>pellentesque enim. Aliquam tempor</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class=" start breakfast col-md-4 margin-b-30 menu-item">
-                    <div class="menu-box clearfix ">
-                        <div class="menu-content">
-                            <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                            <p>pellentesque enim. Aliquam tempor</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class=" dinner col-md-4 margin-b-30 menu-item">
-                    <div class="menu-box clearfix ">
-                        <div class="menu-content">
-                            <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                            <p>pellentesque enim. Aliquam tempor</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class=" lunch breakfast col-md-4 margin-b-30 menu-item">
-                    <div class="menu-box clearfix ">
-                        <div class="menu-content">
-                            <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                            <p>pellentesque enim. Aliquam tempor</p>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class=" breakfast col-md-4 margin-b-30 menu-item">
-                    <div class="menu-box clearfix ">
-                        <div class="menu-content">
-                            <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                            <p>pellentesque enim. Aliquam tempor</p>
-                        </div>
-                    </div>
-                </div><!--end col-->               
+<?php
+            $output = '';
+            $this->load->database();
+            $conn = mysqli_connect ("localhost","root","","softwareengineering");
+            $query = "SELECT ItemID,Name,Value,Price from menu";
+            $result = $conn-> query($query);
+                
+            
+            echo "<table>
+                <tr>
+                    <th> Item ID </th>
+                    <th> Name </th>
+                    <th> Value </th>
+                    <th> Price </th>
+                    <th> Add to cart </th>
+                </tr>";
 
-                                    </li><!--end menu box-->
-                                </ul>
-                            </div>
-                            </div>
+            if ($result -> num_rows > 0)
+            {
+                while ($row = $result-> fetch_assoc())
+                    {
+                        echo "<tr><td>".$row["ItemID"]."</td><td>".$row["Name"]."</td><td>".
+                        $row["Value"]."</td><td>".$row["Price"]."</td></tr>";
+                    }
+                
+                echo "</table>";
+            }
+            else
+            {
+                echo "0 result";
+            }
+            
+        $output .='
+        </table>
+        </div>'
+?>
+
+                                 
+
 
                         </div>
-
                     </div><!--end tabs-->
                 </div>
                 <div class="col-md-6 text-center">
@@ -270,14 +217,10 @@
             </div>
         </div>
         <footer class="footer">
-            <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 margin-b-30">
-                        <img class="margin-b-20" src="assets/images/eatplicity.png" alt="">
-
-                        <span>&copy; Copyright 2018. Eatplicity</span>
+                    <div class="col-lg-6 col-md-12 margin-b-30">
+                        <span class="new">&copy; 2018. Strathmore Food Ordering System</span>
                     </div>
-                </div>
             </div>
         </footer>
 

@@ -161,10 +161,10 @@
         <footer class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 margin-b-30">
+                    <div class="col-lg-6 col-md-12 margin-b-30">
                         <img class="margin-b-20" src="assets/images/eatplicity.png" alt="">
 
-                        <span>&copy; Copyright 2018. Eatplicity</span>
+                        <span>&copy; 2018. Strathmore Food Ordering System</span>
                     </div>
                 </div>
             </div>

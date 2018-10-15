@@ -22,6 +22,15 @@
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <style type="text/css">
+            table, tr {
+                border: 10px;
+                width:70%;
+                color: black;
+                text-align: left;
+                margin-left:200px;
+            }
+        </style>
     </head>
     <body>
         <!-- <div id="preloader">
@@ -84,94 +93,42 @@
         </div><hr>
     <hr width=660px;>
     <hr width=260px;><br>
-        <!-- <div class="space-80"></div> -->
-        <div class="container">
-            <div class="container">
-                <h2 style="margin-left:380px;"> Confirm your Cart </h2><br><br>
-            <div class="row">
-                <div class="col-lg-10 ml-auto mr-auto">
-                    <div class="table-responsive">
-                        <table class="table table-bordered cart-table">
-                            <tbody>
-                                <tr>
-                                    <td class="item-thumb">
-                                        <img src="assets/images/img-1.jpg" alt="" width="70">
-                                    </td>
-                                    <td class="item-name">
-                                        <h4><a href="#">Italian Pizza</a></h4>
-                                    </td>
-                                    <td class="item-price">
-                                        <h4>$9.00</h4>
-                                    </td>
-                                    <td class="item-count">
-                                        <div class="count-input">
-                                            <p> Restaurant? </p>
-                                        </div>
-                                    </td>
-                                    <td class="item-remove">
-                                        <a href="#"><i class="ion-trash-b"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-thumb">
-                                        <img src="assets/images/img-2.jpg" alt="" width="70">
-                                    </td>
-                                    <td class="item-name">
-                                        <h4><a href="#">Wine Pizza</a></h4>
-                                    </td>
-                                    <td class="item-price">
-                                        <h4>$12.00</h4>
-                                    </td>
-                                    <td class="item-count">
-                                        <div class="count-input">
-                                        <p> Restaurant? </p>
-                                        </div>
-                                    </td>
-                                    <td class="item-remove">
-                                        <a href="#"><i class="ion-trash-b"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-thumb">
-                                        <img src="assets/images/img-3.jpg" alt="" width="70">
-                                    </td>
-                                    <td class="item-name">
-                                        <h4><a href="#">Product Title</a></h4>
-                                    </td>
-                                    <td class="item-price">
-                                        <h4>$9.00</h4>
-                                    </td>
-                                    <td class="item-count">
-                                        <div class="count-input">
-                                            <p> Restaurant? </p>
-                                        </div>
-                                    </td>
-                                    <td class="item-remove">
-                                        <a href="#"><i class="ion-trash-b"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>                  
-                    </div><!--end cart table-->
+                            
+            <table>
+                <tr>
+                    <th> Cart ID </th>
+                    <th> Item ID </th>
+                    <th> Price </th>
+                    <th> Remove </th>
+                </tr>
+            </table>
+ 
+    <?php
+            $output = '';
+            $this->load->database();
+            $conn = mysqli_connect ("localhost","root","","softwareengineering");
+            $query = "SELECT CartID,ItemID,Price from cart";
+            $result = $conn-> query($query);
+
+
+            if ($result -> num_rows > 0)
+            {
+                while ($row = $result-> fetch_assoc())
+                    {
+                        echo "<tr><td>".$row["CartID"]."</td><td>".$row["ItemID"]."</td><td>".
+                        $row["Price"]."</td><td>".$row["Remove"]."</td></tr>";
+                    }
+                
+                echo "</table>";
+            }
+            else
+            {
+                echo "0 result";
+            }
+            
+?><br>
 
                              <div class="col-md-7 margin-b-30">
-                                 <div class="cart-totals margin-b-20">
-                                    <div class="cart-totals-title">
-                                        <h3>Cart Totals</h3>
-                                    </div>
-                                     <div class="cart-totals-fields">
-                                         <table class="table">
-                                             <tr>
-                                                 <td>Cart Subtotal</td>
-                                                 <td>$29.00</td>
-                                             </tr>
-                                              <tr>
-                                                  <td class="text-color"><strong>Total</strong></td>
-                                                  <td class="text-color"><strong>$31.00</strong></td>
-                                             </tr>
-                                         </table>
-                                     </div>
-                                 </div><!--end cart totals-->
                                  <div class="cart-buttons text-right">
                                      <a href="<?php echo base_url()?>users/dash" class="btn btn-dark btn-lg">Update Cart</a>
                                      <a href="<?php echo base_url()?>users/checkout" class="btn btn-primary btn-lg">Checkout</a>
@@ -216,10 +173,10 @@
         <footer class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 margin-b-30">
+                    <div class="col-lg-6 col-md-12 margin-b-30">
                         <img class="margin-b-20" src="assets/images/eatplicity.png" alt="">
 
-                        <span>&copy; Copyright 2018. Eatplicity</span>
+                        <span>&copy; 2018. Strathmore Food Ordering System</span>
                     </div>
                 </div>
             </div>
