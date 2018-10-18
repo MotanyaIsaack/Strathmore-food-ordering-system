@@ -16,19 +16,10 @@
         <!--main css file-->
         <link href="<?php echo base_url()?>assets/css/style.css" rel="stylesheet">
         <link rel="shortcut icon" href="<?php echo base_url()?>assets/vendor/images/auth/favicon.png" />
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
+</head>
     <body>
-        <!-- <div id="preloader">
-            <div id="preloader-inner"></div>
-        </div> -->
-        <!--===============main navigation + top bar==========================-->
         <header class="header header-top-transparent">
+            <nav>
             <!--top bar-->
             <div class="top-bar">
                 <div class="container">
@@ -57,14 +48,8 @@
                     </div>
                 </div>
             </div>
-            <!--end top bar-->           
-            <!--main navigation--> 
-
-                            <!-- <img src="assets/images/eatplicity.png" alt="logo"> -->
-                            <!-- <img src="assets/images/eatplicity.png" alt="logo" class="logo-scroll"> -->
 
                     </div>
-                    <!--cart icon-->
 
                 </div><!--/.container-fluid -->
 

@@ -69,7 +69,7 @@
                 </div><!--/.container-fluid -->
 
         <div class="float-right">
-                        <a href="<?php echo base_url()?>/users/logout" class="dropdown-toggle nav-link"  role="button" aria-haspopup="true" aria-expanded="false">Logout <span class="caret"></span></a>
+                        <a href="<?php echo base_url()?>/users/logout" onclick="return  confirm('Ready to logout?')" class="dropdown-toggle nav-link"  role="button" aria-haspopup="true" aria-expanded="false">Logout <span class="caret"></span></a>
         </div>
 
         <div class="float-right">
@@ -102,14 +102,14 @@
             <div class="text-center">
                 
                 <h1 class="title-1">SHAWARMA'S Menu</h1>  
-                <h4>
-                                                <span>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                </span>
-                                            </h4>
+                    <h4>
+                        <span>
+                            <i class="ion-star"></i>
+                            <i class="ion-star"></i>
+                            <i class="ion-star"></i>
+                            <i class="ion-star"></i>
+                        </span>
+                    </h4>
                 <div class="space-30"></div>
             </div>
         </div>
@@ -131,6 +131,8 @@
 <br><br>
                                         </div>
                                     </div>
+
+<!-- To display menu from database -->
 <?php
             $output = '';
             $this->load->database();
@@ -163,9 +165,9 @@
                 echo "0 result";
             }
             
-        $output .='
-        </table>
-        </div>'
+            $output .='
+            </table>
+            </div>'
 ?>
 
                                  

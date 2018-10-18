@@ -9,19 +9,15 @@
         <title>Lolanes Menu</title>
         <!-- Bootstrap -->
         <link href="<?php echo base_url()?>assets/css/plugins/plugins.css" rel="stylesheet">
-        <!--slider revolution-->
+        <!--stylesheets-->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/revolution/css/settings.css"> 
         <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/revolution/css/layers.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/revolution/css/navigation.css">
         <!--main css file-->
         <link href="<?php echo base_url()?>assets/css/style.css" rel="stylesheet">
         <link rel="shortcut icon" href="<?php echo base_url()?>assets/vendor/images/auth/favicon.png" />
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+
+    <!-- In line CSS -->
         <style type="text/css">
             table {
                 border: 10px;
@@ -32,7 +28,7 @@
             .new {
                 margin-left: 195px;
             }
-        </style>
+        </style>      
     </head>
     <body>
         <!-- <div id="preloader">
@@ -40,6 +36,8 @@
         </div> -->
         <!--===============main navigation + top bar==========================-->
         <header class="header header-top-transparent">
+
+        <nav>
             <!--top bar-->
             <div class="top-bar">
                 <div class="container">
@@ -53,42 +51,30 @@
                     </div>
                 </div>
             </div>
-            <!--end top bar-->           
-            <!--main navigation--> 
 
-                            <!-- <img src="assets/images/eatplicity.png" alt="logo"> -->
-                            <!-- <img src="assets/images/eatplicity.png" alt="logo" class="logo-scroll"> -->
-
-                    </div>
                     <!--cart icon-->
-                    <div class="float-right cart-nav nav-item">
-                        <div class="dropdown">
-                            <a href="<?php echo base_url()?>/users/cart" class="nav-link dropdown-toggle" title="Cart" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ion-ios-cart"></i> <span class="badge badge-primary"></span></a>
-                        </div>
-                    </div>
-                </div><!--/.container-fluid -->
+            <div class="float-right cart-nav nav-item">
+                <div class="dropdown">
+                    <a href="<?php echo base_url()?>/users/cart" class="nav-link dropdown-toggle" title="Cart" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ion-ios-cart"></i> <span class="badge badge-primary"></span></a>
+                </div>
+            </div>
 
-                <div class="float-right">
-                        <a href="<?php echo base_url()?>/users/logout" class="dropdown-toggle nav-link"  role="button" aria-haspopup="true" aria-expanded="false">Logout <span class="caret"></span></a>
-        </div>
+            <div class="float-right">
+                <a href="<?php echo base_url()?>/users/logout" class="dropdown-toggle nav-link" onclick="return  confirm('Ready to logout?')"  role="button" aria-haspopup="true" aria-expanded="false">Logout <span class="caret"></span></a>
+            </div>
 
-        <div class="float-right">
-                        <a href="<?php echo base_url()?>/users/dash" class="dropdown-toggle nav-link">Home <span class="caret"></span></a>
-        </div>
-            </nav>
-        </header>
+            <div class="float-right">
+                <a href="<?php echo base_url()?>/users/dash" class="dropdown-toggle nav-link">Home <span class="caret"></span></a>
+            </div>
+        </nav>
+    </header>
 
-
-        <!--===============end main navigation + top bar =====================-->
-
-
-        <div class="space-70"></div>
+    <div class="space-70"></div>
         <div class="overflow-hidden">
             <div class="container">
                 <div class="row vertical-align-child">
                     <div class="col-md-6 text-center">
                         <h1 class="title-1"><span class="text-color ">Eatplicity,</span> Strathmore's Food Ordering System.</h1>  
-
                     </div>
                 </div>
             </div>
@@ -101,15 +87,15 @@
         <div class="container">
             <div class="text-center">
                 <h1 class="title-1">LOLANES' Menu</h1>  
-                <h4>
-                                                <span>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                </span>
-                                            </h4>
+                    <h4>
+                        <span>
+                            <i class="ion-star"></i>
+                            <i class="ion-star"></i>
+                            <i class="ion-star"></i>
+                            <i class="ion-star"></i>
+                            <i class="ion-star"></i>
+                      </span>
+                    </h4>
                 <div class="space-30"></div>
             </div>
         </div>
@@ -132,6 +118,7 @@
                                         </div>
                                     </div>
 
+<!-- To display menu from database -->
 <?php
             $output = '';
             $this->load->database();
@@ -164,14 +151,13 @@
                 echo "0 result";
             }
             
-        $output .='
-        </table>
-        </div>'
+            $output .='
+            </table>
+            </div>'
 ?>
 
 
                         </div>
-
                     </div><!--end tabs-->
                 </div>
                 <div class="col-md-6 text-center">
@@ -180,10 +166,7 @@
         </div>
 
         <div class="testimonials">
-            <div class="container">
-                
-              
-            </div>
+            <div class="container"></div>
         </div><!--testimonials end-->
 
         <div class="cta-skin contact-info">
@@ -224,14 +207,6 @@
             $(document).ready(function(){
                 // add to cart button listener
                 $('.add_cart').on('submit', function(){
-            
-                    // info is in the table / single product layout
-                    var id = $(this).find('ItemID').text();
-                    var quantity = $(this).find('.cart-quantity').val();
-            
-                    // redirect to add_to_cart.php, with parameter values to process the request
-                    window.location.href = "add_to_cart.php?id=" + id + "&quantity=" + quantity;
-                    return false;
                 });
             });
         </script>
