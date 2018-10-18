@@ -13,7 +13,7 @@
                 <p class="font">Already have an account?</p>
                 <a class="btn get-started-btn" href="<?php echo base_url()?>">SIGN IN</a>
               </div>
-              <? php echo validation_errors(); ?>
+              <?php echo validation_errors(); ?>
               
               <form action="<?php echo base_url()?>users/form_validation" method="post">
               <h3 class="mr-auto font">Are you tired of standing in queues waiting for your meal?
