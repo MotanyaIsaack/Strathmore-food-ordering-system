@@ -50,21 +50,6 @@
                                 <li class="list-inline-item"><a href="javascript:void(0)"><i class="ion-email"></i> support@resto.com</a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-6 text-right">
-                            <ul class="list-inline level-2">
-                                <li class="lang list-inline-item"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Lang </i></a>
-                                    <ul class="dropdown-menu lang-dropdown">
-                                        <li><a href="javascript:void(0)"><img class="flag" src="<?php echo base_url()?>assets/images/spanish.png" alt="Spanish">Spanish</a></li>
-                                        <li><a href="javascript:void(0)"><img class="flag" src="<?php echo base_url()?>assets/images/italy.png" alt="Italian">Italian</a></li>
-                                        <li><a href="javascript:void(0)"><img class="flag" src="<?php echo base_url()?>assets/images/german.png" alt="German">German</a></li>
-                                        <li><a href="javascript:void(0)"><img class="flag" src="<?php echo base_url()?>assets/images/fr.png" alt="French">French</a></li>
-                                        <li><a href="javascript:void(0)"><span><img class="flag" src="<?php echo base_url()?>assets/images/usa-flag.png" alt="English">English</span></a></li>
-                                        <li><a href="javascript:void(0)"><img class="flag" src="<?php echo base_url()?>assets/images/jp.png" alt="Japanise">Japanise</a></li>
-                                        <li><a href="javascript:void(0)"><img class="flag" src="<?php echo base_url()?>assets/images/in.png" alt="Hindi">Hindi</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -78,7 +63,7 @@
                     <!--cart icon-->
                     <div class="float-right cart-nav nav-item">
                         <div class="dropdown">
-                            <a href="<?php echo base_url()?>/users/cart" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ion-ios-cart"></i> <span class="badge badge-primary">3</span></a>
+                          <a href="<?php echo base_url()?>/users/cart" class="nav-link dropdown-toggle" title="Cart" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ion-ios-cart"></i> <span class="badge badge-primary"></span></a>
                         </div>
                     </div>
                 </div><!--/.container-fluid -->
@@ -168,7 +153,7 @@
                 while ($row = $result-> fetch_assoc())
                     {
                         echo "<tr><td>".$row["ItemID"]."</td><td>".$row["Name"]."</td><td>".
-                        $row["Value"]."</td><td>".$row["Price"]."</td></tr>";
+                        $row["Value"]."</td><td>".$row["Price"]."</td><td>"."<a href='#' onclick=alert('Added') name=add_cart class='btn btn-primary'>+</td></tr>";
                     }
                 
                 echo "</table>";
@@ -234,39 +219,6 @@
         <!-- jQuery plugins-->
         <script src="assets/js/plugins/plugins.js"></script>
         <script src="assets/js/template-custom.js" type="text/javascript"></script> 
-
-        <!--revolution slider-->
-        <script type="text/javascript" src="assets/revolution/js/jquery.themepunch.tools.min.js"></script>
-        <script type="text/javascript" src="assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
-        <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
-        <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-        <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-        <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-        <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-        <script>
-            jQuery(document).ready(function () {
-                jQuery("#slider1").revolution({
-                    sliderType: "standard",
-                    jsFileLocation: "../../revolution/js/",
-                    sliderLayout: "fullscreen",
-                    dottedOverlay: "none",
-                    delay: 9000,
-                    navigation: {
-                        arrows: {enable: true}
-                    },
-                    parallax: {
-                        type: "on",
-                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85],
-                        origo: "enterpoint",
-                        speed: 400,
-                        bgparallax: "on",
-                        disable_onmobile: "off"
-                    },
-                    gridwidth: 1170,
-                    gridheight: 600
-                });
-            });
-        </script>
     </body>
 
 <!-- Mirrored from bootstraplovers.com/bootstrap4/resto-2.2/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Oct 2018 10:41:38 GMT -->

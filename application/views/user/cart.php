@@ -16,6 +16,7 @@
         <!--main css file-->
         <link href="<?php echo base_url()?>assets/css/style.css" rel="stylesheet">
         <link rel="shortcut icon" href="<?php echo base_url()?>assets/vendor/images/auth/favicon.png" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -25,10 +26,10 @@
         <style type="text/css">
             table, tr {
                 border: 10px;
-                width:70%;
+                width:80%;
                 color: black;
                 text-align: left;
-                margin-left:200px;
+                margin-left:300px;
             }
         </style>
     </head>
@@ -99,7 +100,7 @@
                     <th> Cart ID </th>
                     <th> Item ID </th>
                     <th> Price </th>
-                    <th> Remove </th>
+                    <th> Remove Item from Cart</th>
                 </tr>
             </table>
  
@@ -113,10 +114,12 @@
 
             if ($result -> num_rows > 0)
             {
+                echo "<table>";
+
                 while ($row = $result-> fetch_assoc())
                     {
                         echo "<tr><td>".$row["CartID"]."</td><td>".$row["ItemID"]."</td><td>".
-                        $row["Price"]."</td><td>".$row["Remove"]."</td></tr>";
+                        $row["Price"]."</td><td>"."<a href='#' class='btn btn-primary'><></td></tr>";
                     }
                 
                 echo "</table>";
@@ -130,8 +133,8 @@
 
                              <div class="col-md-7 margin-b-30">
                                  <div class="cart-buttons text-right">
-                                     <a href="<?php echo base_url()?>users/dash" class="btn btn-dark btn-lg">Update Cart</a>
-                                     <a href="<?php echo base_url()?>users/checkout" class="btn btn-primary btn-lg">Checkout</a>
+                                     <a href="<?php echo base_url()?>users/dash" class="btn btn-dark btn-lg">Add to Cart</a>
+                                     <a href="<?php echo base_url()?>users/checkout" class="btn btn-dark btn-lg">Checkout</a>
                                  </div>
                              </div>
                         </div>
@@ -193,6 +196,7 @@
         <!-- jQuery plugins-->
         <script src="assets/js/plugins/plugins.js"></script>
         <script src="assets/js/template-custom.js" type="text/javascript"></script> 
+
     </body>
 
 <!-- Mirrored from bootstraplovers.com/bootstrap4/resto-2.2/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Oct 2018 10:41:38 GMT -->
