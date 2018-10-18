@@ -1,7 +1,7 @@
 <nav class="top-nav">
     <div class="nav-wrapper">
     <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
-        <a href="#" class="brand-logo black-text" style="margin-top:10px; margin-left:15px;">
+        <a href="<?php echo base_url();?>restaurant/view" class="brand-logo black-text" style="margin-top:10px; margin-left:15px;">
             <img src="<?php echo base_url();?>assets/img/eatplicity-logo.png" alt="company-logo" class="responsive-img">
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">

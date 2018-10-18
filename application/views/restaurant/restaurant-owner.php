@@ -74,7 +74,7 @@
             </div>
             <div class="row">
                 <div class="col s12 m12 l5 card-container">
-                    <a href="">
+                    <a href="<?php echo base_url();?>/restaurant/viewOrder">
                         <div class="card">
                             <div class="card-title" id="card-links">
                                 Active Orders
@@ -103,7 +103,7 @@
             </div>
             <div class="row" style="margin-bottom:50px">
                 <div class="col s12 m12 l12 card-container">
-                    <a href="">
+                    <a href="<?php echo base_url();?>/restaurant/viewPayments">
                         <div class="card">
                             <div class="card-title"id="card-links">
                                 Transactions
@@ -117,7 +117,7 @@
             </div>
             <div class="row">
                 <div class="col s12 m12 l12 card-container">
-                    <a href="">
+                    <a href="<?php echo base_url();?>/restaurant/viewSettings">
                         <div class="card">
                             <div class="card-title" id="card-links">
                                 Settings
