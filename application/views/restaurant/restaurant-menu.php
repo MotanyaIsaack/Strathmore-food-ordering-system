@@ -1,11 +1,7 @@
 <nav class="top-nav">
     <div class="nav-wrapper">
     <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
-<<<<<<< HEAD
-        <a href="<?php echo base_url();?>/restaurant/view" class="brand-logo black-text" style="margin-top:10px; margin-left:15px;">
-=======
         <a href="#" class="brand-logo black-text" style="margin-top:10px; margin-left:15px;">
->>>>>>> user-Naym0
             <img src="<?php echo base_url();?>assets/img/eatplicity-logo.png" alt="company-logo" class="responsive-img">
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -17,11 +13,7 @@
 <ul class="sidenav" id="mobile-demo">
     <li><a href="<?php echo base_url();?>restaurant/viewMenu">Our Menu</a></li>
     <li><a href="">Orders Received</a></li>
-<<<<<<< HEAD
-    <li><a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a></li>
-=======
     <li><a href=""">Payments</a></li>
->>>>>>> user-Naym0
     <li><a href="">Settings</a></li>
     <li><a href="">Logout</a></li>
 
@@ -56,29 +48,17 @@
                 </div>
                 <div class="row">
                     <div class="col s12 m12 l12"id="sidenav-link">
-<<<<<<< HEAD
                         <a href="<?php echo base_url();?>restaurant/viewOrder">Orders Received</a>
-=======
-                        <a href="">Orders Received</a>
->>>>>>> user-Naym0
                     </div>
                 </div>
                 <div class="row">
                     <div class="col s12 m12 l12"id="sidenav-link">
-<<<<<<< HEAD
                         <a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a>
-=======
-                        <a href="">Payments</a>
->>>>>>> user-Naym0
                     </div>
                 </div>
                 <div class="row">
                     <div class="col s12 m12 l12 "id="sidenav-link">
-<<<<<<< HEAD
                         <a href="<?php echo base_url();?>restaurant/viewSettings">Settings</a>
-=======
-                        <a href="">Settings</a>
->>>>>>> user-Naym0
                     </div>
                 </div>
             </div>
@@ -90,35 +70,20 @@
                 </div>
                 <div class="row">
                     <div class="col s6 m6 l3 left-align">
-<<<<<<< HEAD
                         <a class="menu-options-btn btn-large waves-effect waves-light" href="#" onclick="$('#create-menu').modal('open');">Create Menu</a>
                     </div>
                     <div class="col s6 m6 l3 left-align">
                         <a href="#" onclick="$('#delete-menu').modal('open');" class="menu-options-btn btn-large waves-effect waves-light">Delete Menu</a>
-=======
-                        <a href="" class="btn-large waves-effect waves-light">Create Menu</a>
-                    </div>
-                    <div class="col s6 m6 l3 left-align">
-                        <a href="" class="btn-large waves-effect waves-light">Delete Menu</a>
->>>>>>> user-Naym0
                     </div>
                 </div>
                 <div class="row" style="margin-top:20px;">
                     <div class="col s12 m12 l12 left-align">
-<<<<<<< HEAD
                         <span style="color: #505050; font-size:22px;">Current Menu</span>
-=======
-                        <span style="color: #505050; font-size:22px;">Active Menu</span>
->>>>>>> user-Naym0
                     </div>
                 </div>
                 <div class="row" style="margin-top:20px;">
                     <div style="padding:20px; background-color: #505050;" class="card">
-<<<<<<< HEAD
                         <div style="background-color:white;" id="menu-container">
-=======
-                        <div style="background-color:white;">
->>>>>>> user-Naym0
                             <table class="responsive-table center-align">
                                 <thead>
                                     <th>Item ID</th>
@@ -132,12 +97,8 @@
                                         <td>French Fries</td>
                                         <td>Ksh. 100</td>
                                         <td class="left-align">
-<<<<<<< HEAD
                                             <a href="" title="Edit Menu Item"><i class="menu-edit-icon material-icons">edit</i></a>
                                             <a href="" title="Delete Menu Item"><i class="menu-delete-icon material-icons">delete</i></a>
-=======
-                                            <a href=""><i><i></a>
->>>>>>> user-Naym0
                                         </td>
                                     </tr>
                                 </tbody>
@@ -145,7 +106,6 @@
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div class="modal" id="create-menu" >
                     <div class="modal-content" style="padding:10px;">
                         <div class="row">
@@ -193,8 +153,5 @@
                 </div>
             </div>
             
-=======
-            </div>
->>>>>>> user-Naym0
     </div>
 </main>

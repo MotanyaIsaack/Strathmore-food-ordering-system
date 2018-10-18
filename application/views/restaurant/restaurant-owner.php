@@ -1,11 +1,7 @@
 <nav class="top-nav">
     <div class="nav-wrapper">
     <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
-<<<<<<< HEAD
-        <a href="<?php echo base_url();?>restaurant/view" class="brand-logo black-text" style="margin-top:10px; margin-left:15px;">
-=======
         <a href="#" class="brand-logo black-text" style="margin-top:10px; margin-left:15px;">
->>>>>>> user-Naym0
             <img src="<?php echo base_url();?>assets/img/eatplicity-logo.png" alt="company-logo" class="responsive-img">
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -17,11 +13,7 @@
 <ul class="sidenav" id="mobile-demo">
     <li><a href="<?php echo base_url();?>restaurant/viewMenu">Our Menu</a></li>
     <li><a href="">Orders Received</a></li>
-<<<<<<< HEAD
-    <li><a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a></li>
-=======
     <li><a href=""">Payments</a></li>
->>>>>>> user-Naym0
     <li><a href="">Settings</a></li>
     <li><a href="">Logout</a></li>
 
