@@ -15,6 +15,7 @@
             $this->load->view('restaurant/restaurant-menu');
             $this->load->view('restaurant/footer');
         }
+<<<<<<< HEAD
         public function viewOrder(){
             $this->load->view('restaurant/header');
             $this->load->view('restaurant/restaurant-orders');
@@ -30,5 +31,7 @@
             $this->load->view('restaurant/restaurant-settings');
             $this->load->view('restaurant/footer');
         }
+=======
+>>>>>>> user-Naym0
     }
 ?>

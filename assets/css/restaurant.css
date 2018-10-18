@@ -64,6 +64,7 @@ main {
 .card-container:hover .card{
 	background-color:#191919;
 	color: #3ca03c;
+<<<<<<< HEAD
 }
 .menu-options-btn{
 	background-color: #F05742;
@@ -115,4 +116,6 @@ input[type=number]::-webkit-outer-spin-button {
 #order-container{
 	max-height: 600px;
 	overflow-y: scroll;
+=======
+>>>>>>> user-Naym0
 }
