@@ -17,10 +17,10 @@
                     </div>
 
                     <ul class="navigation">
-                        <li class="navigation__active"><a href=""><i class="zmdi zmdi-home"></i> Home</a></li>
+                        <li class="navigation__active"><a href="<?php echo base_url('admin/overview'); ?>"><i class="zmdi zmdi-home"></i> Home</a></li>
 
                         <li class="navigation__sub">
-                            <a href="<?php echo base_url('admin/overview'); ?>"><i class="zmdi zmdi-home"></i> Manage</a>
+                            <a href=""><i class="zmdi zmdi-home"></i> Manage</a>
 
                             <ul>
                                 <li><a href="<?= base_url('admin/restaurant');?>">Restaurants</a></li>                            </ul>

@@ -1,5 +1,9 @@
 <?php
     class Admin extends CI_Controller{
+        /*
+         *  Generates random numbers
+         */
+        
         public function overview(){
             $this->load->view('admin/header');
             $this->load->view('admin/top-header');
@@ -8,6 +12,7 @@
 			$this->load->view('admin/footer');
         }
         public function restaurant(){
+            
             // $this->load->view('admin/header');
             // $this->load->view('admin/top-header');
             // $this->load->view('admin/sidenav');
@@ -23,6 +28,10 @@
         ,'trim|required|valid_email|is_unique[users.Email]',array(
             'is_unique' => 'This %s already exists'
         ));
+        // $this->form_validation->set_rules('ID','National ID Number'
+        // ,'trim|required|valid_ID|is_unique[users.ID]',array(
+        //     'is_unique' => 'This %s already exists'
+        // ));
         $this->form_validation->set_rules('Gender','Gender','trim|required'
         );
         $this->form_validation->set_rules('Password','Password','trim|required');
@@ -39,8 +48,11 @@
             $enc_password = password_hash($password,PASSWORD_DEFAULT);
             $type = "Restaurant Owner";
             $status = 1;
+            
+            
 
            $data = array(
+                'ID' => $this->input->post('ID'),
                 'Name' => $this->input->post('Firstname').' '.$this->input->post('Lastname'),
                 'Email' => $this->input->post('Email'),
                 'Gender' => $this->input->post('Gender'),
@@ -53,6 +65,7 @@
                 <p>Dear '.$data['Name'].',</p>
                 <p>You have been registered to the Strathmore Food Ordering System as a/an '.$data['Type'].'.</p>
                 <p>These are your credentials: <br>
+                <stong> ID: </strong>'.$data['ID'].'</p>
                 <strong>Password: </strong>'.$data['Password'].'</p>
                 <a href="'.base_url().'">Click here to login</a> 
                 
@@ -80,6 +93,7 @@
 
 
         }
+        
     }
 
 

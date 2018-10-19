@@ -9,6 +9,7 @@
         //Register restaurant
         public function register($enc_password,$type,$status){
             $data = array(
+                'ID' => $this->input->post('ID'),
                 'Name' => $this->input->post('Firstname').' '.$this->input->post('Lastname'),
                 'Email' => $this->input->post('Email'),
                 'Gender' => $this->input->post('Gender'),
@@ -18,6 +19,9 @@
             );
             $user_insert = $this->db->insert('users',$data);
             return $user_insert;
+        }
+        public function getRestaurant(){
+            
         }
 
     }

@@ -43,6 +43,11 @@
                                 <i class="form-group__bar"></i>
                             </div>
                             <div class="form-group form-group--float">
+                                <input name="ID" type="number" class="form-control">
+                                <label>ID Number</label>
+                                <i class="form-group__bar"></i>
+                            </div>
+                            <div class="form-group form-group--float">
                                 <div class="select">
                                     <select name="Gender" class="form-control">
                                         <option>Gender</option>
