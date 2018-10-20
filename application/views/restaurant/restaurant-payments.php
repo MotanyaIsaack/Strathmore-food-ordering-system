@@ -5,7 +5,7 @@
             <img src="<?php echo base_url();?>assets/img/eatplicity-logo.png" alt="company-logo" class="responsive-img">
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a class="dropdown-trigger black-text" href="#!" data-target="user-functions">$Restaurant<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-trigger black-text" href="#!" data-target="user-functions"><?php foreach($data as $row){echo $row->Name;}?><i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
     </div>
 </nav>
@@ -33,12 +33,12 @@
                 </div>
                 <div class="row" style="margin-top:30px">
                     <div class="col s12 m12 l12">
-                        <span class="white-text">Shop Name: $Name</span>
+                        <span class="white-text">Shop Name: <?php foreach($data as $row){echo $row->Name;}?></span>
                     </div>
                 </div>
                 <div class="row" style="padding-bottom:50px; margin-bottom:0px;">
                     <div class="col s12 m12 l12">
-                        <span class="white-text">Shop Number: $Number</span>
+                        <span class="white-text">Shop Number: <?php foreach($data as $row){ echo $row->Location; } ?></span>
                     </div>
                 </div>
                 <div class="row">
