@@ -115,10 +115,25 @@
 				{
 					if(password_verify($_POST['password'], $user->Password))
 					{
-						echo "Successful Login";
-						$_SESSION['user_logged'] = TRUE;
-						$_SESSION['userID'] = $user->username;
-						redirect("Users/dash");
+						if($user->Type == "User"){
+							echo "Successful Login";
+							$_SESSION['user_logged'] = TRUE;
+							$_SESSION['userID'] = $user->ID;
+							$_SESSION['userName'] = $user->username;
+							redirect("Users/dash");
+						}else if($user->Type == "Restaurant Owner"){
+							echo "Successful Login";
+							$_SESSION['user_logged'] = TRUE;
+							$_SESSION['userID'] = $user->ID;
+							$_SESSION['userName'] = $user->username;
+							redirect("Restaurant/view");
+						}else if($user->Type == "Administrator"){
+							echo "Successful Login";
+							$_SESSION['user_logged'] = TRUE;
+							$_SESSION['userID'] = $user->ID;
+							$_SESSION['userName'] = $user->username;
+							redirect("Admin/overview");
+						}
 					}
 					else
 					{
