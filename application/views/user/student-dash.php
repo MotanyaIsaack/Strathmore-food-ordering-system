@@ -67,7 +67,7 @@
                     <!--cart icon-->
                     <div class="float-right cart-nav nav-item">
                         <div class="dropdown">
-                            <a href="<?php echo base_url()?>/users/cart" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ion-ios-cart"></i> <span class="badge badge-primary">3</span></a>
+                            <a href="<?php echo base_url()?>/users/cart" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ion-ios-cart"></i> <span class="badge badge-primary"></span></a>
                         </div>
                     </div>
                 </div><!--/.container-fluid -->
