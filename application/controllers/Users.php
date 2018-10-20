@@ -35,6 +35,11 @@
 			$this->load->view('user/shawarma');
 		}
 
+		public function rest()
+		{
+			$this->load->view('user/restaurant-menu');
+		}
+
 		public function cart()
 		{
 			$this->load->view('user/cart');

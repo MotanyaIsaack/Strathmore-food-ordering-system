@@ -181,6 +181,27 @@
                             </div>
                             </div>
 
+<?php
+            $output = '';
+            $this->load->database();
+            $conn = mysqli_connect ("localhost","root","","softwareengineering");
+            $query = "SELECT RestaurantID,Name,Description from restaurant";
+            $result = $conn-> query($query);
+                
+            if ($result) 
+            {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo $row["RestaurantID"]. $row["Name"]. $row["Description"];
+                }
+            }
+            else
+            {
+                echo "0 result";
+            }
+?>
+
+
                         </div>
 
                     </div><!--end tabs-->
