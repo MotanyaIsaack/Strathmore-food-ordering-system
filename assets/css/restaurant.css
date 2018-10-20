@@ -1,0 +1,67 @@
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	font-family: 'Raleway'sans-serif;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+.top-nav {
+	background-color: white;
+}
+#user-functions li a{
+	color: #191919;
+	transition: all .2s ease-out;
+}
+#user-functions li a:hover {
+	background-color: #F05742;
+	color: white;
+}
+
+.dropdown-trigger:focus {
+	outline: none;
+}
+
+.sidenav-menu {
+	text-align: center;
+	background-color: #191919;
+    
+}
+#sidenav-link a{
+    color: white;
+    transition: color .2s ease-in;
+    text-transform: uppercase;
+	font-size: 18px;
+	letter-spacing: 2px;
+}
+#sidenav-link a:hover{
+    color:#3ca03c;
+}
+#sidenav-link{
+    border-bottom: solid .2px white;
+    padding: 10px 0;
+}
+#rating-card{
+	background-color:
+	#3ca03c;
+	color: white;
+}
+#card-links{
+	text-transform: uppercase;
+	font-weight: 700;
+}
+#card-link-content{
+	color:#3ca03c;
+	font-size:18px;
+}
+.card-container a{
+	color: #505050;
+	transition: all .2s ease-in;
+}
+.card-container:hover .card{
+	background-color:#191919;
+	color: #3ca03c;
+}
