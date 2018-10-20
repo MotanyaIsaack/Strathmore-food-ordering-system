@@ -44,6 +44,11 @@
 		{
 			$this->load->view('user/checkout');
 		}
+
+		public function rest()
+		{
+			$this->load->view('user/restaurant-menu');
+		}
 		
 		public function logout()
 		{
