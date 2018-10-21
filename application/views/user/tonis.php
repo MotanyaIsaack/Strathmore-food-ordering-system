@@ -120,13 +120,13 @@
 <?php
             $output = '';
             $this->load->database();
-            $conn = mysqli_connect ("localhost","ordering","system","softwareengineering");
+            $conn = mysqli_connect ("localhost","root","","softwareengineering");
             $query = "SELECT ItemID,Name,Value,Price from menu";
             $result = $conn-> query($query);
                 
             
             echo "<table>
-                <tr>    
+                <tr>
                     <th> Item ID </th>
                     <th> Name </th>
                     <th> Value </th>
