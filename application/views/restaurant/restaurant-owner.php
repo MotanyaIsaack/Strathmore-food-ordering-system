@@ -5,16 +5,16 @@
             <img src="<?php echo base_url();?>assets/img/eatplicity-logo.png" alt="company-logo" class="responsive-img">
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a class="dropdown-trigger black-text" href="#!" data-target="user-functions">$Restaurant<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-trigger black-text" href="#!" data-target="user-functions"><?php foreach($data as $row){echo $row->Name;}?><i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
     </div>
 </nav>
 <!-- Mobile Menu -->
 <ul class="sidenav" id="mobile-demo">
     <li><a href="<?php echo base_url();?>restaurant/viewMenu">Our Menu</a></li>
-    <li><a href="">Orders Received</a></li>
-    <li><a href=""">Payments</a></li>
-    <li><a href="">Settings</a></li>
+    <li><a href="<?php echo base_url();?>restaurant/viewOrder">Orders Received</a></li>
+    <li><a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a></li>
+    <li><a href="<?php echo base_url();?>restaurant/viewSettings">Settings</a></li>
     <li><a href="">Logout</a></li>
 
 </ul>
@@ -33,12 +33,20 @@
             </div>
             <div class="row" style="margin-top:30px">
                 <div class="col s12 m12 l12">
-                    <span class="white-text">Shop Name: $Name</span>
+                    <span class="white-text">Shop Name: <?php
+                        foreach($data as $row){
+                            echo $row->Name;
+                        }
+                    ?></span>
                 </div>
             </div>
             <div class="row" style="padding-bottom:50px; margin-bottom:0px;">
                 <div class="col s12 m12 l12">
-                    <span class="white-text">Shop Number: $Number</span>
+                    <span class="white-text"><?php
+                        foreach($data as $row){
+                            echo $row->Location;
+                        }
+                    ?></span>
                 </div>
             </div>
             <div class="row">
@@ -48,17 +56,17 @@
             </div>
             <div class="row">
                 <div class="col s12 m12 l12"id="sidenav-link">
-                    <a href="">Orders Received</a>
+                    <a href="<?php echo base_url();?>restaurant/viewOrder">Orders Received</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 m12 l12"id="sidenav-link">
-                    <a href="">Payments</a>
+                    <a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 m12 l12 "id="sidenav-link">
-                    <a href="">Settings</a>
+                    <a href="<?php echo base_url();?>restaurant/viewSettings">Settings</a>
                 </div>
             </div>
         </div>
@@ -67,14 +75,20 @@
                 <div class="col s12 m12 l3 offset-l9">
                     <div class="card" id="rating-card" style="border-radius:20px;">
                         <div class="card-content">
-                            <span>$rating</span>
+                            <span><?php
+                                foreach($data as $row){
+                                   echo $row->Rating;
+                                   echo " ";
+                                   echo "<i class='fas fa-star' style='color:gold';></i>";
+                                }
+                            ?></span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 m12 l5 card-container">
-                    <a href="">
+                    <a href="<?php echo base_url();?>/restaurant/viewOrder">
                         <div class="card">
                             <div class="card-title" id="card-links">
                                 Active Orders
@@ -103,7 +117,7 @@
             </div>
             <div class="row" style="margin-bottom:50px">
                 <div class="col s12 m12 l12 card-container">
-                    <a href="">
+                    <a href="<?php echo base_url();?>/restaurant/viewPayments">
                         <div class="card">
                             <div class="card-title"id="card-links">
                                 Transactions
@@ -117,7 +131,7 @@
             </div>
             <div class="row">
                 <div class="col s12 m12 l12 card-container">
-                    <a href="">
+                    <a href="<?php echo base_url();?>/restaurant/viewSettings">
                         <div class="card">
                             <div class="card-title" id="card-links">
                                 Settings

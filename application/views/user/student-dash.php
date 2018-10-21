@@ -67,7 +67,7 @@
                     <!--cart icon-->
                     <div class="float-right cart-nav nav-item">
                         <div class="dropdown">
-                            <a href="<?php echo base_url()?>/users/cart" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ion-ios-cart"></i> <span class="badge badge-primary">3</span></a>
+                            <a href="<?php echo base_url()?>/users/cart" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ion-ios-cart"></i> <span class="badge badge-primary"></span></a>
                         </div>
                     </div>
                 </div><!--/.container-fluid -->
@@ -180,6 +180,28 @@
                                 </ul>
                             </div>
                             </div>
+
+
+<?php
+            $output = '';
+            $this->load->database();
+            $conn = mysqli_connect ("localhost","root","","softwareengineering");
+            $query = "SELECT RestaurantID,Name,Description from restaurant";
+            $result = $conn-> query($query);
+                
+            if ($result) 
+            {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo $row["RestaurantID"]. $row["Name"]. $row["Description"];
+                }
+            }
+            else
+            {
+                echo "0 result";
+            }
+?>
+
 
                         </div>
 

@@ -54,8 +54,19 @@ $route['Insert/savedata'] = 'Insert/savedata';
 $route['users/form_validation'] = 'users/form_validation';
 $route['users/login'] = 'users/login';
 $route['Logindata/checklogin'] = 'Logindata/checklogin';
+$route['users/view'] = 'users/view';
+$route['users/dash'] = 'users/dash';
+$route['users/tonis'] = 'users/tonis';
+$route['users/lolanes'] = 'users/lolanes';
+$route['users/shawarma'] = 'users/shawarma';
+$route['users/rest'] = 'users/rest';
+$route['users/cart'] = 'users/cart';
+$route['users/checkout'] = 'users/checkout';
+$route['users/logout'] = 'users/logout';
+
 
 $route['default_controller'] = 'users/view';
 $route['(:any)'] = 'users/view/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+?>
