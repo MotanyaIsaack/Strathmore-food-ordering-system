@@ -185,7 +185,7 @@
 <?php
             $output = '';
             $this->load->database();
-            $conn = mysqli_connect ("localhost","root","","softwareengineering");
+            $conn = mysqli_connect ("localhost","ordering","system","softwareengineering");
             $query = "SELECT RestaurantID,Name,Description from restaurant";
             $result = $conn-> query($query);
                 
