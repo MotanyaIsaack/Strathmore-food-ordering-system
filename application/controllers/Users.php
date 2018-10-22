@@ -61,8 +61,9 @@
 			//call CodeIgniter's default Constructor
 			parent::__construct();
 	
-			//load database library manually
+			//load library manually
 			$this->load->database();
+			$this->load->library('session');
 	
 			//load Model
 			$this->load->model('Insertdata');
@@ -198,6 +199,7 @@
 		{
 			$this->load->library('cart');
 			$this->cart;
+			$this->load->model('insert');
 
 			$data = array (
 				$i=$this->input->post('ItemID'),
