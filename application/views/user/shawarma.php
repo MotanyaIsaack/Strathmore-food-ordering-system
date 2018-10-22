@@ -142,7 +142,7 @@
             {
                 while ($row = $result-> fetch_assoc())
                     {
-                        echo "<tr><td>".$row["ItemID"]."</td><td>".$row["Name"]."</td><td>".$row["Price"]."</td><td>"."<form action='<?php echo base_url()?>users/addtocart' method='post' onclick=alert('Added') name=add_cart class='btn btn-primary'>+</td></tr>";
+                        echo "<tr><td>".$row["ItemID"]."</td><td>".$row["Name"]."</td><td>".$row["Price"]."</td><td>"."<form action='<?php echo base_url()?>users/addtocart' method='post' name=add_cart class='btn btn-primary'>+</td></tr>";
                     }
                 
                 echo "</table>";
