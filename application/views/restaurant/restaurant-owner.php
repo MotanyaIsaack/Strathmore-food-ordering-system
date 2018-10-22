@@ -13,7 +13,7 @@
 <ul class="sidenav" id="mobile-demo">
     <li><a href="<?php echo base_url();?>restaurant/viewMenu">Our Menu</a></li>
     <li><a href="<?php echo base_url();?>restaurant/viewOrder">Orders Received</a></li>
-    <li><a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a></li>
+    <!-- <li><a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a></li> -->
     <li><a href="<?php echo base_url();?>restaurant/viewSettings">Settings</a></li>
     <li><a href="<?php echo base_url();?>restaurant/logout">Logout</a></li>
 
@@ -33,6 +33,7 @@
             </div>
             <div class="row" style="margin-top:30px">
                 <div class="col s12 m12 l12">
+                    
                     <span class="white-text">Shop Name: <?php
                         foreach($data as $row){
                             echo $row->Name;
@@ -59,11 +60,11 @@
                     <a href="<?php echo base_url();?>restaurant/viewOrder">Orders Received</a>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col s12 m12 l12"id="sidenav-link">
                     <a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col s12 m12 l12 "id="sidenav-link">
                     <a href="<?php echo base_url();?>restaurant/viewSettings">Settings</a>
@@ -115,7 +116,7 @@
                     </a>
                 </div>
             </div>
-            <div class="row" style="margin-bottom:50px">
+            <!-- <div class="row" style="margin-bottom:50px">
                 <div class="col s12 m12 l12 card-container">
                     <a href="<?php echo base_url();?>/restaurant/viewPayments">
                         <div class="card">
@@ -128,7 +129,7 @@
                         </div>
                     </a>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col s12 m12 l12 card-container">
                     <a href="<?php echo base_url();?>/restaurant/viewSettings">

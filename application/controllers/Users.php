@@ -71,7 +71,10 @@
 			//load Model
 			$this->load->model('Insertdata');
 		}
- 
+		
+		/*
+		 * Function that deals with the registration of Students
+		 */
 		public function form_validation()
 		{
 			$this->load->library('form_validation');
@@ -99,7 +102,7 @@
 					$g=$this->input->post('sex'),
 					$uPass=$this->input->post('pass'),
 					$t="Student",
-					$s="0",
+					$s="1",
 					$p=password_hash($uPass, PASSWORD_BCRYPT)
 				);
 
@@ -149,6 +152,19 @@
 							
 						}
 						else{
+							$this->db->select("*");
+							$this->db->from('restaurants');
+							$this->db->where(array ('OwnerID' => $u));
+							$restaurantQuery = $this->db->get();
+							$rResult = $restaurantQuery->result_array();
+							foreach($rResult as $rows){
+								$rID = $rows['RestaurantID'];
+								$rName = $rows['Name'];
+								$rDescription = $rows['Description'];
+								$rOID = $rows['OwnerID'];
+								$rLocation = $rows['Location'];
+								$rRating = $rows['rating'];
+							}
 							foreach ($queryResult as $users){
 								$userType  = $users['Type'];
 								$userID= $users['ID'];
@@ -162,7 +178,13 @@
 								'id' => $userID,
 								'gender'=> $userGender,
 								'type' => $userType,
-								'email' => $userEmail
+								'email' => $userEmail,
+								'rID' => $rID,
+								'rName' => $rName,
+								'rDescription' => $rDescription,
+								'rOID' => $rOID,
+								'rLocation' => $rLocation,
+								'rRating' => $rRating
 							);
 							$this->session->set_userdata($userArray);
 							redirect("Restaurant/view");
