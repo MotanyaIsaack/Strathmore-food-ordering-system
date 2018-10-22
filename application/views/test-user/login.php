@@ -17,7 +17,7 @@
           <div class="card white">
             <div class="card-content center-align" >
         
-        <form align="center"; text="black"; action="login.php" method="POST">
+        <form allign="center"; text="black"; action="login.php" method="POST">
         
           <div class="row">
 

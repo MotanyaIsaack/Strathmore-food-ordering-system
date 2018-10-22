@@ -1,10 +1,18 @@
 <?php
     class Admin extends CI_CONTROLLER{
+
+        public function __construct(){
+            parent::__construct();
+            $this->load->model('admin_model');
+        }
         public function overview(){
+            $data['count_restaurants'] = $this->admin_model->count_restaurants();
+            $data['count_students'] = $this->admin_model->count_students();
+
             $this->load->view('admin/templates/header');
             $this->load->view('admin/templates/top-header');
             $this->load->view('admin/templates/sidenav');
-            $this->load->view('admin/overview');
+            $this->load->view('admin/overview',$data);
             $this->load->view('admin/templates/footer');
         }
         public function restaurants(){
@@ -74,7 +82,7 @@
                     //Set session message
                     $this->session->set_flashdata('failed_register','Could not finish registration. Try again later');
                 }
-                redirect('admin/overview');
+                redirect('admin/restaurants');
             }
         }
     }

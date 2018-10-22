@@ -27,7 +27,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12">
-                                    <h3>10</h3>
+                                    <h3><?= $count_students;?></h3>
                                     <h6 class="card-subtitle">Total Students Enrolled</h6>
                                 </div>
                                 <div class="col-12">
@@ -44,7 +44,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12">
-                                    <h3>10</h3>
+                                    <h3><?= $count_restaurants;?></h3>
                                     <h6 class="card-subtitle">Total Restaurants Enrolled</h6></div>
                                 <div class="col-12">
                                     <div class="progress">

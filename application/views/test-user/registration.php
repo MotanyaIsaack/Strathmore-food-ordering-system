@@ -14,7 +14,7 @@
               <div class="card white">
                 <div class="card-content center-align" >
             
-            <form align="center"; text="black";>
+            <form allign="center"; text="black";>
             
               <div class="row">
                 <div class="input-field col s12">

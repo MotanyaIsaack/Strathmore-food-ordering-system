@@ -17,8 +17,11 @@
     <link href="<?= base_url();?>assets/admin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?= base_url();?>assets/admin/assets/css/style.css" rel="stylesheet">
+    <link href="<?= base_url();?>assets/admin/assets/css/styles.css" rel="stylesheet">
+
     <!-- You can change the theme colors from here -->
     <link href="<?= base_url();?>assets/admin/assets/css/colors/blue.css" id="theme" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

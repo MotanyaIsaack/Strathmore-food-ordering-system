@@ -19,6 +19,18 @@
             $insert = $this->db->insert('users',$data);
             return $insert;
         }
+        public function count_restaurants(){
+            $Type = "Restaurant Owner";
+            $this->db->from('users');
+            $this->db->where(array('Type'=>$Type));
+            return $this->db->count_all_results();
+        }
+        public function count_students(){
+            $Type = "Student";
+            $this->db->from('users');
+            $this->db->where(array('Type'=>$Type));
+            return $this->db->count_all_results();
+        }
     }
 
 ?>
