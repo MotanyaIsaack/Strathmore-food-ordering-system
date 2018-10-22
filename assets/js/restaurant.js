@@ -6,6 +6,7 @@ $(document).ready(function () {
 	});
 	$('.sidenav').sidenav();
 	$('.modal').modal();
+	$('#edit-menu').modal();
 
 })
 

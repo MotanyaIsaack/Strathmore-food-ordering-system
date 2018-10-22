@@ -20,6 +20,7 @@
         {
             $this->result['data']= $this->RestaurantModel->getRestaurantDetails();
             $this->result['items'] = $this->RestaurantModel->getMenu();
+            $this->result['itemRow'] = $this->RestaurantModel->menuRowData();
             $this->load->view('restaurant/header');
             $this->load->view('restaurant/restaurant-menu',$this->result);
             $this->load->view('restaurant/footer');
@@ -61,5 +62,6 @@
             $this->RestaurantModel->updateShopName($new);
            redirect("Restaurant/viewSettings");
         }
+        
     }
 ?>

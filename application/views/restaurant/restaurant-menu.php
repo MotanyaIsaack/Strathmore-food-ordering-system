@@ -98,10 +98,11 @@
                                            
                                     ?>
                                             <tr>
+                                            <?php $id = $row->ItemID;?>
                                             <td><?php echo $row->Name;?></td>
                                             <td>Ksh <?php echo $row->Price?></td> 
                                             <td class="left-align">
-                                            <a href="" title="Edit Menu Item"><i class="menu-edit-icon material-icons">edit</i></a>
+                                            <a href="<?php echo base_url()."restaurant/viewMenu#edit-menu?id='$id'"?>" onclick ="$('#edit-menu').modal('open')" title="Edit Menu Item"><i class="menu-edit-icon material-icons">edit</i></a>
                                             <!-- <a href="" title="Delete Menu Item"><i class="menu-delete-icon material-icons">delete</i></a> -->
                                             </td>                                          
                                             </tr>
@@ -138,14 +139,7 @@
                                         <label for="food-price">Item Price</label>
                                     </div>
                                 </div>
-                                <!-- <div class="col s2 m2 l2">
-                                    <div class="input-field">
-                                        <a href="#" class="btn-floating" onclick="addMenuField();"><i class="material-icons">add</i></a>
-                                    </div>
-                                </div> -->
                             </div>
-                        </div>
-                        <div class="row" id="dynamicRows">
                         </div>
                         <div class="row">
                             <div class="col s12 m12 l12">
@@ -167,6 +161,41 @@
                         </div>
                     </div>
                 </div> -->
+                <div class="modal" id="edit-menu">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col s8 m8 l8 left-align">
+                                    <span class="modal-header">Edit Menu Item</span>
+                            </div>
+                            <div class="col s4 m4 l4 right-align">
+                                    <a href="#" class="modal-close waves-effect btn-flat"><i class="material-icons">close</i></a>
+                            </div>    
+                        </div>
+                        <form method = "post" action="<?php echo base_url();?>restaurant/createMenu">
+                        <div class="row">
+                            <div id="menufields">
+                                 <div class="col s6 m6 l6">
+                                <div class="input-field" id="itemInput">
+                                    <input type="text" placeholder="Item Name" id="food-name" name="foodName" autocomplete="off" required>
+                                    <label for="food-name">Item Name</label>
+                                </div>
+                                </div>
+                                <div class="col s4 m4 l4">
+                                    <div class="input-field" id="itemPrice">
+                                        <input type="text" placeholder="Item Price"  name="foodPrice" id="food-price" autocomplete="off" required>
+                                        <label for="food-price">Item Price</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <button type="submit" class="btn waves-effect waves-light" name="makeMenu">Submit</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             
     </div>
