@@ -90,7 +90,7 @@
                 </tr>
             </table>
  
-    <?php
+<?php
             $output = '';
             $this->load->database();
             $conn = mysqli_connect ("localhost","root","","softwareengineering");
@@ -115,7 +115,7 @@
                 echo "0 result";
             }
             
-?><br>
+?>
 
                              <div class="col-md-7 margin-b-30">
                                  <div class="cart-buttons text-right">

@@ -96,7 +96,6 @@
 					$uPass=$this->input->post('pass'),
 					$t="Student",
 					$s="0",
-					$img="xyz",
 					$p=password_hash($uPass, PASSWORD_BCRYPT)
 				);
 
@@ -136,7 +135,19 @@
 				}
 		}
 
+		public function addtocart()
+		{
+			$this->load->library('cart');
+			$this->cart;
 
+			$data = array (
+				$i=$this->input->post('ItemID'),
+				$n=$this->input->post('Name'),
+				$p=$this->input->post('Price')
+			);
+		
+		$this->cart->insert($data);
+		}
 
 	}
 ?>

@@ -131,17 +131,15 @@
                 <tr>
                     <th> Item ID </th>
                     <th> Name </th>
-                    <th> Value </th>
                     <th> Price </th>
-                    <th> Add to Cart </th>
+                    <th> Add to cart </th>
                 </tr>";
 
-            if ($result -> num_rows > 0)
+            if ($result)
             {
                 while ($row = $result-> fetch_assoc())
                     {
-                        echo "<tr><td>".$row["ItemID"]."</td><td>".$row["Name"]."</td><td>".
-                        $row["Value"]."</td><td>".$row["Price"]."</td><td>"."<a href='#' onclick=alert('Added') name=add_cart class='btn btn-primary'>+</td></tr>";
+                        echo "<tr><td>".$row["ItemID"]."</td><td>".$row["Name"]."</td><td>".$row["Price"]."</td><td>"."<form action='<?php echo base_url()?>users/addtocart' method='post' onclick=alert('Added') name=add_cart class='btn btn-primary'>+</td></tr>";
                     }
                 
                 echo "</table>";
