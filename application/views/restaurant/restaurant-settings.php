@@ -13,7 +13,7 @@
 <ul class="sidenav" id="mobile-demo">
     <li><a href="<?php echo base_url();?>restaurant/viewMenu">Our Menu</a></li>
     <li><a href="<?php echo base_url();?>restaurant/viewOrder">Orders Received</a></li>
-    <li><a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a></li>
+    <!-- <li><a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a></li> -->
     <li><a href="<?php echo base_url();?>restuarant/viewSettings">Settings</a></li>
     <li><a href="<?php echo base_url();?>restaurant/logout">Logout</a></li>
 
@@ -51,11 +51,11 @@
                         <a href="<?php echo base_url();?>restuarant/viewOrder">Orders Received</a>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col s12 m12 l12"id="sidenav-link">
                         <a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a>
                     </div>
-                </div>
+                </div> -->
                 <div class="row">
                     <div class="col s12 m12 l12 "id="sidenav-link">
                         <a href="<?php echo base_url();?>restaurant/viewSettings">Settings</a>

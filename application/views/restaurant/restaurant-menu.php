@@ -13,7 +13,7 @@
 <ul class="sidenav" id="mobile-demo">
     <li><a href="<?php echo base_url();?>restaurant/viewMenu">Our Menu</a></li>
     <li><a href="<?php echo base_url();?>restaurant/viewOrder">Orders Received</a></li>
-    <li><a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a></li>
+    <!-- <li><a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a></li> -->
     <li><a href="<?php echo base_url();?>restaurant/viewSettings">Settings</a></li>
     <li><a href="<?php echo base_url();?>restaurant/logout">Logout</a></li>
 
@@ -51,11 +51,11 @@
                         <a href="<?php echo base_url();?>restaurant/viewOrder">Orders Received</a>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col s12 m12 l12"id="sidenav-link">
                         <a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a>
                     </div>
-                </div>
+                </div> -->
                 <div class="row">
                     <div class="col s12 m12 l12 "id="sidenav-link">
                         <a href="<?php echo base_url();?>restaurant/viewSettings">Settings</a>
@@ -72,9 +72,9 @@
                     <div class="col s6 m6 l3 left-align">
                         <a class="menu-options-btn btn-large waves-effect waves-light" href="#" onclick="$('#create-menu').modal('open');">Create Menu</a>
                     </div>
-                    <div class="col s6 m6 l3 left-align">
+                    <!-- <div class="col s6 m6 l3 left-align">
                         <a href="#" onclick="$('#delete-menu').modal('open');" class="menu-options-btn btn-large waves-effect waves-light">Delete Menu</a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row" style="margin-top:20px;">
                     <div class="col s12 m12 l12 left-align">
@@ -102,7 +102,7 @@
                                             <td>Ksh <?php echo $row->Price?></td> 
                                             <td class="left-align">
                                             <a href="" title="Edit Menu Item"><i class="menu-edit-icon material-icons">edit</i></a>
-                                            <a href="" title="Delete Menu Item"><i class="menu-delete-icon material-icons">delete</i></a>
+                                            <!-- <a href="" title="Delete Menu Item"><i class="menu-delete-icon material-icons">delete</i></a> -->
                                             </td>                                          
                                             </tr>
                                     <?php
@@ -155,7 +155,7 @@
                         </form>
                     </div>
                 </div>  
-                <div class="modal" id="delete-menu">
+                <!-- <div class="modal" id="delete-menu">
                     <div class="modal-content" style="padding:10px;">
                         <div class="row">
                             <div class="col s8 m8 l8 left-align">
@@ -166,7 +166,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             
     </div>

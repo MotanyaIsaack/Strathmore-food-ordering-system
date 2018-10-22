@@ -59,7 +59,6 @@
                 'Name'=> $this->input->post('shopName')
             );
             $this->RestaurantModel->updateShopName($new);
-           // $this->session->set_userdata('rName',$shopName);
            redirect("Restaurant/viewSettings");
         }
     }
