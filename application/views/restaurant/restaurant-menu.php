@@ -15,13 +15,13 @@
     <li><a href="<?php echo base_url();?>restaurant/viewOrder">Orders Received</a></li>
     <li><a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a></li>
     <li><a href="<?php echo base_url();?>restaurant/viewSettings">Settings</a></li>
-    <li><a href="">Logout</a></li>
+    <li><a href="<?php echo base_url();?>restaurant/logout">Logout</a></li>
 
 </ul>
 <ul id="user-functions" class="dropdown-content">
-  <li><a href="#!">My Restaurant<i class="material-icons left">more_horiz</i></a></li>
+  <li><a href="<?php echo base_url();?>restaurant/viewSettings">My Restaurant<i class="material-icons left">more_horiz</i></a></li>
   <li class="divider"></li>
-  <li><a href="#!"><i class="material-icons">power_settings_new</i>Logout</a></li>
+  <li><a href="<?php echo base_url();?>restaurant/logout"><i class="material-icons">power_settings_new</i>Logout</a></li>
 </ul>
 <main>
     <div class="row center-align" style="margin-bottom:0px;">
@@ -86,21 +86,28 @@
                         <div style="background-color:white;" id="menu-container">
                             <table class="responsive-table center-align">
                                 <thead>
-                                    <th>Item ID</th>
+                                    <!-- <th>Item ID</th> -->
                                     <th>Item Name</th>
                                     <th>Item Price</th>
                                     <th>Action</th>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>French Fries</td>
-                                        <td>Ksh. 100</td>
-                                        <td class="left-align">
+                                    <?php
+                                        
+                                        foreach($items as $row){
+                                           
+                                    ?>
+                                            <tr>
+                                            <td><?php echo $row->Name;?></td>
+                                            <td>Ksh <?php echo $row->Price?></td> 
+                                            <td class="left-align">
                                             <a href="" title="Edit Menu Item"><i class="menu-edit-icon material-icons">edit</i></a>
                                             <a href="" title="Delete Menu Item"><i class="menu-delete-icon material-icons">delete</i></a>
-                                        </td>
-                                    </tr>
+                                            </td>                                          
+                                            </tr>
+                                    <?php
+                                        }
+                                    ?>
                                 </tbody>
                         </table>   
                         </div>
@@ -116,34 +123,36 @@
                                 <a href="#" class="modal-close waves-effect btn-flat"><i class="material-icons">close</i></a>
                             </div>
                         </div>
+                        <form method = "post" action="<?php echo base_url();?>restaurant/createMenu">
                         <div class="row">
                             <div id="menufields">
                                  <div class="col s6 m6 l6">
                                 <div class="input-field" id="itemInput">
-                                    <input type="text" placeholder="Item Name" id=food-name>
+                                    <input type="text" placeholder="Item Name" id="food-name" name="foodName" autocomplete="off" required>
                                     <label for="food-name">Item Name</label>
                                 </div>
                                 </div>
                                 <div class="col s4 m4 l4">
                                     <div class="input-field" id="itemPrice">
-                                        <input type="text" placeholder="Item Price" id="food-price">
+                                        <input type="text" placeholder="Item Price"  name="foodPrice" id="food-price" autocomplete="off" required>
                                         <label for="food-price">Item Price</label>
                                     </div>
                                 </div>
-                                <div class="col s2 m2 l2">
+                                <!-- <div class="col s2 m2 l2">
                                     <div class="input-field">
                                         <a href="#" class="btn-floating" onclick="addMenuField();"><i class="material-icons">add</i></a>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="row" id="dynamicRows">
                         </div>
                         <div class="row">
                             <div class="col s12 m12 l12">
-                                <button type="submit" class="btn waves-effect waves-light">Submit</button>
+                                <button type="submit" class="btn waves-effect waves-light" name="makeMenu">Submit</button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>  
                 <div class="modal" id="delete-menu">

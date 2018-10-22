@@ -19,6 +19,7 @@
         public function viewMenu()
         {
             $this->result['data']= $this->RestaurantModel->getRestaurantDetails();
+            $this->result['items'] = $this->RestaurantModel->getMenu();
             $this->load->view('restaurant/header');
             $this->load->view('restaurant/restaurant-menu',$this->result);
             $this->load->view('restaurant/footer');
@@ -40,12 +41,26 @@
             $this->load->view('restaurant/header');
             $this->load->view('restaurant/restaurant-settings',$this->result);
             $this->load->view('restaurant/footer');
+           
         }
         public function logout()
 		{
 			$this->load->view('user/exit');
 			$this->session->sess_destroy();
 		}
-
+        public function createMenu(){
+            $fName = $this->input->post('foodName');
+            $fPrice = $this->input->post('foodPrice');
+            $this->RestaurantModel->addMenu($fName, $fPrice);
+            redirect("Restaurant/viewMenu");
+        }
+        public function changeShopName(){
+            $new = array(
+                'Name'=> $this->input->post('shopName')
+            );
+            $this->RestaurantModel->updateShopName($new);
+           // $this->session->set_userdata('rName',$shopName);
+           redirect("Restaurant/viewSettings");
+        }
     }
 ?>

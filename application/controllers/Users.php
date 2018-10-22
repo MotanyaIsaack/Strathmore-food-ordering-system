@@ -54,7 +54,6 @@
 		{
 			$this->load->view('user/exit');
 			$this->session->sess_destroy();
-			echo $this->session->userdata('name');
 		}
 		
 		public function __construct()
@@ -146,6 +145,19 @@
 							
 						}
 						else{
+							$this->db->select("*");
+							$this->db->from('restaurants');
+							$this->db->where(array ('OwnerID' => $u));
+							$restaurantQuery = $this->db->get();
+							$rResult = $restaurantQuery->result_array();
+							foreach($rResult as $rows){
+								$rID = $rows['RestaurantID'];
+								$rName = $rows['Name'];
+								$rDescription = $rows['Description'];
+								$rOID = $rows['OwnerID'];
+								$rLocation = $rows['Location'];
+								$rRating = $rows['rating'];
+							}
 							foreach ($queryResult as $users){
 								$userType  = $users['Type'];
 								$userID= $users['ID'];
@@ -159,7 +171,13 @@
 								'id' => $userID,
 								'gender'=> $userGender,
 								'type' => $userType,
-								'email' => $userEmail
+								'email' => $userEmail,
+								'rID' => $rID,
+								'rName' => $rName,
+								'rDescription' => $rDescription,
+								'rOID' => $rOID,
+								'rLocation' => $rLocation,
+								'rRating' => $rRating
 							);
 							$this->session->set_userdata($userArray);
 							redirect("Restaurant/view");

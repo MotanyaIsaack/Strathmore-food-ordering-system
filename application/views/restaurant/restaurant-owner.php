@@ -33,6 +33,7 @@
             </div>
             <div class="row" style="margin-top:30px">
                 <div class="col s12 m12 l12">
+                    
                     <span class="white-text">Shop Name: <?php
                         foreach($data as $row){
                             echo $row->Name;

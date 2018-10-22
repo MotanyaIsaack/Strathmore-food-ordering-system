@@ -15,13 +15,13 @@
     <li><a href="<?php echo base_url();?>restaurant/viewOrder">Orders Received</a></li>
     <li><a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a></li>
     <li><a href="<?php echo base_url();?>restuarant/viewSettings">Settings</a></li>
-    <li><a href="">Logout</a></li>
+    <li><a href="<?php echo base_url();?>restaurant/logout">Logout</a></li>
 
 </ul>
 <ul id="user-functions" class="dropdown-content">
   <li><a href="<?php echo base_url();?>restaurant/viewSettings">My Restaurant<i class="material-icons left">more_horiz</i></a></li>
   <li class="divider"></li>
-  <li><a href="#!"><i class="material-icons">power_settings_new</i>Logout</a></li>
+  <li><a href="<?php echo base_url();?>restaurant/logout"><i class="material-icons">power_settings_new</i>Logout</a></li>
 </ul>
 <main>
     <div class="row center-align" style="margin-bottom:0px;">
@@ -71,31 +71,17 @@
                 <div class="row" style="margin-top:20px;">
                     <div class="col s12 m6 l6 offset-l3">
                         <div class="card">
-                        <?php echo form_open_multipart('upload/do_upload');?>
+                        <form action="<?php echo base_url();?>restaurant/changeShopName" method="post">
                             <div class="card-content">
                                 <div class="row">
                                     <div class="col s6 m6 l6 left-align">
-                                        <span style= "color: #505050; font-size:20px;">Edit Settings</span>
+                                        <span style= "color: #505050; font-size:20px;">Change Shop Name</span>
                                     </div>
                                     <div class="col s6 m6 l6 right-align">
-                                        <button type="submit" class="btn waves-effect waves-light">
+                                        <button type="submit" name="submit" class="btn waves-effect waves-light">
                                             <i class="material-icons right">save</i>
                                             Save Changes
                                         </button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col s6 m6 l6 left-align" style="padding-top:20px;">
-                                        <span>Shop Image<i class = "material-icons left">edit</i></span>
-                                    </div>
-                                    <div class="input-field file-field col s6 m6 l6">
-                                        <img src="<?echo base_url();?>assets/img/restaurant-img.jpg" class="responsive-img left"alt="user-image">
-                                        <button class="btn waves-effect waves-light change-user-image-btn">
-                                            Change<input type="file">
-                                        </button>
-                                        <div class="file-path-wrapper">
-                                            <input class ="file-path validate" type="text">
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -104,12 +90,12 @@
                                     </div>
                                     <div class="col s6 m6 l6">
                                         <div class="input-field">
-                                            <input type="text" value="<?php foreach($data as $row){echo $row->Name;}?>">
+                                            <input type="text" name="shopName" autocomplete="off" value="<?php foreach($data as $row){echo $row->Name;}?>">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <?php echo "</form>"?>
+                        </form>
                         </div>
                     </div>
                 </div>

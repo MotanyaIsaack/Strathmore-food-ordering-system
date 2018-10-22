@@ -14,14 +14,14 @@
     <li><a href="<?php echo base_url();?>restaurant/viewMenu">Our Menu</a></li>
     <li><a href="<?php echo base_url();?>restaurant/viewOrder">Orders Received</a></li>
     <li><a href="<?php echo base_url();?>restaurant/viewPayments">Payments</a></li>
-    <li><a href="<?php echo base_url();?>restuarant/viewSettings">Settings</a></li>
-    <li><a href="">Logout</a></li>
+    <li><a href="<?php echo base_url();?>restaurant/viewSettings">Settings</a></li>
+    <li><a href="<?php echo base_url();?>restaurant/logout">Logout</a></li>
 
 </ul>
 <ul id="user-functions" class="dropdown-content">
   <li><a href="<?php echo base_url();?>restaurant/viewSettings">My Restaurant<i class="material-icons left">more_horiz</i></a></li>
   <li class="divider"></li>
-  <li><a href="#!"><i class="material-icons">power_settings_new</i>Logout</a></li>
+  <li><a href="<?php echo base_url();?>restaurant/logout"><i class="material-icons">power_settings_new</i>Logout</a></li>
 </ul>
 <main>
     <div class="row center-align" style="margin-bottom:0px;">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="row">
                     <div class="col s12 m12 l12"id="sidenav-link">
-                        <a href="<?php echo base_url();?>restuarant/viewOrder">Orders Received</a>
+                        <a href="<?php echo base_url();?>restaurant/viewOrder">Orders Received</a>
                     </div>
                 </div>
                 <div class="row">
