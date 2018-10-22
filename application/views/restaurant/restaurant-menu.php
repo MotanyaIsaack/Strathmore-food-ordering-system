@@ -132,9 +132,16 @@
                                 </div>
                                 <div class="col s2 m2 l2">
                                     <div class="input-field">
-                                        <a href="#" class="btn-floating"><i class="material-icons">add</i></a>
+                                        <a href="#" class="btn-floating" onclick="addMenuField();"><i class="material-icons">add</i></a>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row" id="dynamicRows">
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <button type="submit" class="btn waves-effect waves-light">Submit</button>
                             </div>
                         </div>
                     </div>

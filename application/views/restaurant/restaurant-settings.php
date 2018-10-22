@@ -71,6 +71,7 @@
                 <div class="row" style="margin-top:20px;">
                     <div class="col s12 m6 l6 offset-l3">
                         <div class="card">
+                        <?php echo form_open_multipart('upload/do_upload');?>
                             <div class="card-content">
                                 <div class="row">
                                     <div class="col s6 m6 l6 left-align">
@@ -92,6 +93,9 @@
                                         <button class="btn waves-effect waves-light change-user-image-btn">
                                             Change<input type="file">
                                         </button>
+                                        <div class="file-path-wrapper">
+                                            <input class ="file-path validate" type="text">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -104,17 +108,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="row">
-                                    <div class="col s6 m6 l6 left-align" style="padding-top:20px;">
-                                        <span>Account Password<i class = "material-icons left">edit</i></span>
-                                    </div>
-                                    <div class="col s6 m6 l6">
-                                        <div class="input-field">
-                                            <input type="password" value="123456">
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
+                            <?php echo "</form>"?>
                         </div>
                     </div>
                 </div>

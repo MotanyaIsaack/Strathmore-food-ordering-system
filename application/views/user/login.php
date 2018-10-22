@@ -21,7 +21,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="mdi mdi-account-outline"></i></span>
                     </div>
-                    <input style="font-size:15px;font-family: 'Raleway', sans-serif;" type="text" class="form-control" name="userId" placeholder="ID number" required>
+                    <input style="font-size:15px;font-family: 'Raleway', sans-serif;" type="text" class="form-control" name="userId" placeholder="ID number" autocomplete="off" required>
                   </div>
                 </div>
                 <div class="form-group">
@@ -29,7 +29,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="mdi mdi-lock-outline"></i></span>
                     </div>
-                    <input style="font-size:15px;font-family: 'Raleway', sans-serif;" type="password" class="form-control input" name="password" placeholder="Password" required>
+                    <input style="font-size:15px;font-family: 'Raleway', sans-serif;" type="password" class="form-control input" name="password" placeholder="Password" autocomplete="off" required>
                   </div>
                 </div>
                 <div class="form-group">
