@@ -16,12 +16,6 @@
         <!--main css file-->
         <link href="<?php echo base_url()?>assets/css/style.css" rel="stylesheet">
         <link rel="shortcut icon" href="<?php echo base_url()?>assets/vendor/images/auth/favicon.png" />
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
         <style type="text/css">
             table {
                 border: 10px;
@@ -53,11 +47,6 @@
                     </div>
                 </div>
             </div>
-            <!--end top bar-->           
-            <!--main navigation--> 
-
-                            <!-- <img src="assets/images/eatplicity.png" alt="logo"> -->
-                            <!-- <img src="assets/images/eatplicity.png" alt="logo" class="logo-scroll"> -->
 
                     </div>
                     <!--cart icon-->
@@ -137,7 +126,7 @@
             $output = '';
             $this->load->database();
             $conn = mysqli_connect ("localhost","root","","softwareengineering");
-            $query = "SELECT ItemID,Name,Value,Price from menu";
+            $query = "SELECT ItemID,Name,Price from menu WHERE RestaurantID='3'";
             $result = $conn-> query($query);
                 
             
@@ -145,17 +134,15 @@
                 <tr>
                     <th> Item ID </th>
                     <th> Name </th>
-                    <th> Value </th>
                     <th> Price </th>
                     <th> Add to cart </th>
                 </tr>";
 
-            if ($result -> num_rows > 0)
+            if ($result)
             {
                 while ($row = $result-> fetch_assoc())
                     {
-                        echo "<tr><td>".$row["ItemID"]."</td><td>".$row["Name"]."</td><td>".
-                        $row["Value"]."</td><td>".$row["Price"]."</td><td>"."<a href='#' onclick=alert('Added') name=add_cart class='btn btn-primary'>+</td></tr>";
+                        echo "<tr><td>".$row["ItemID"]."</td><td>".$row["Name"]."</td><td>".$row["Price"]."</td><td>"."<form action='<?php echo base_url()?>users/addtocart' method='post' onclick=alert('Added') name=add_cart class='btn btn-primary'>+</td></tr>";
                     }
                 
                 echo "</table>";

@@ -17,12 +17,6 @@
         <!--main css file-->
         <link href="<?php echo base_url()?>assets/css/style.css" rel="stylesheet">
         <link rel="shortcut icon" href="<?php echo base_url()?>assets/vendor/images/auth/favicon.png" />
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
     <body>
         <!-- <div id="preloader">
@@ -41,19 +35,6 @@
                             </ul>
                         </div>
                         <div class="col-sm-6 text-right">
-                            <ul class="list-inline level-2">
-                                <li class="lang list-inline-item"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Lang </i></a>
-                                    <ul class="dropdown-menu lang-dropdown">
-                                        <li><a href="javascript:void(0)"><img class="flag" src="<?php echo base_url()?>assets/images/spanish.png" alt="Spanish">Spanish</a></li>
-                                        <li><a href="javascript:void(0)"><img class="flag" src="<?php echo base_url()?>assets/images/italy.png" alt="Italian">Italian</a></li>
-                                        <li><a href="javascript:void(0)"><img class="flag" src="<?php echo base_url()?>assets/images/german.png" alt="German">German</a></li>
-                                        <li><a href="javascript:void(0)"><img class="flag" src="<?php echo base_url()?>assets/images/fr.png" alt="French">French</a></li>
-                                        <li><a href="javascript:void(0)"><span><img class="flag" src="<?php echo base_url()?>assets/images/usa-flag.png" alt="English">English</span></a></li>
-                                        <li><a href="javascript:void(0)"><img class="flag" src="<?php echo base_url()?>assets/images/jp.png" alt="Japanise">Japanise</a></li>
-                                        <li><a href="javascript:void(0)"><img class="flag" src="<?php echo base_url()?>assets/images/in.png" alt="Hindi">Hindi</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -122,9 +103,6 @@
                             <div role="tabpanel" class="tab-pane active show fade" id="drink">
                                 <ul class="list-unstyled">
                                     <li class="menu-box clearfix margin-b-20">
-                                        <div class="thumb">
-                                            <img src="assets/images/a2.jpg" width="70" class="img-fluid" alt="">
-                                        </div>
                                         <div class="menu-content">
                                             <h4><a href="<?php echo base_url()?>users/tonis">TONI'S</a>
                                                 <span>
@@ -140,9 +118,6 @@
                                         
                                     </li><!--end menu box-->
                                     <li class="menu-box clearfix margin-b-20">
-                                        <div class="thumb">
-                                            <img src="assets/images/a3.jpg" width="70" class="img-fluid" alt="">
-                                        </div>
                                         <div class="menu-content">
                                             <h4><a href="<?php echo base_url()?>users/lolanes">LOLANES</a>     
                                                 <span>
@@ -157,9 +132,6 @@
                                         </div>
                                     </li><!--end menu box-->
                                     <li class="menu-box clearfix margin-b-20">
-                                        <div class="thumb">
-                                            <img src="assets/images/a2.jpg" width="70" class="img-fluid" alt="">
-                                        </div>
                                         <div class="menu-content">
                                             <h4><a href="<?php echo base_url()?>users/shawarma">SHAWARMA</a> 
                                                 <span>
@@ -173,6 +145,33 @@
                                         </div>
                                     </li><!--end menu box-->
                                     <li class="menu-box clearfix margin-b-20">
+                                    <div class="menu-content">
+                                    
+<?php
+            $output = '';
+            $this->load->database();
+            $conn = mysqli_connect ("localhost","ordering","system","softwareengineering");
+            $query = "SELECT RestaurantID,Name,Description from restaurants";
+            $result = $conn-> query($query);
+            $i=$this->input->post('RestaurantID');
+                
+            if ($result) 
+            {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "<h4><a href='rest'>". $row["Name"]. "<a/>"."</h4>". "<p>". $row["Description"]. "<p>";
+                }
+            }
+            else
+            {
+                echo "0 result";
+            }
+?>
+
+                                    
+                                    </div>
+                                    </li>
+                                    <li class="menu-box clearfix margin-b-20">
                                         <div class="thumb">
                                             <img src="assets/images/img-6.jpg" width="70" class="img-fluid" alt="">
                                         </div>
@@ -181,6 +180,9 @@
                                 </ul>
                             </div>
                             </div>
+
+
+
 
                         </div>
 

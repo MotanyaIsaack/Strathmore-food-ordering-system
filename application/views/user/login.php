@@ -6,13 +6,15 @@
             <div class="slide-content bg-1">
             </div>
           </div>
+
           <div class="col-12 col-md-8 h-100 bg-white">
             <div class="auto-form-wrapper d-flex align-items-center justify-content-center flex-column">
               <div class="nav-get-started">
                 <p class="font">Don't have an account?</p>
                 <a class="btn get-started-btn font" href="<?php echo base_url()?>users/register">GET STARTED</a>
               </div>
-              <form action="<?php echo base_url()?>users/login" method="POST">
+
+      <form action="<?php echo base_url()?>users/login" method="POST">
                 <h3 class="mr-auto font">Welcome to the SU Food Ordering System, where ordering meals is made much faster.
                   <br> <span class='get-started'></span></h3><br>
                 <!-- <p class="mb-5 mr-auto font details">Enter your details below.</p> -->
