@@ -6,6 +6,7 @@
             parent:: __construct();
             $this->load->database();
             $this->load->model('RestaurantModel');
+            $this->load->library('upload');
         }
         public function view()
         {
@@ -40,6 +41,11 @@
             $this->load->view('restaurant/restaurant-settings',$this->result);
             $this->load->view('restaurant/footer');
         }
-        
+        public function logout()
+		{
+			$this->load->view('user/exit');
+			$this->session->sess_destroy();
+		}
+
     }
 ?>

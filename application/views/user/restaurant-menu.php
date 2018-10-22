@@ -104,18 +104,17 @@
 <br><br>
                                         </div>
                                     </div>
-
+                                <div>
 <!-- To display menu from database -->
 <?php
             $output = '';
             $this->load->database();
-            $conn = mysqli_connect ("localhost","root","","softwareengineering");
-            $query = "SELECT ItemID,Name,Value,Price from menu Where RestaurantID=[??]";
+            $conn = mysqli_connect ("localhost","ordering","system","softwareengineering");
+            $query = "SELECT ItemID,Name,Value,Price from menu WHERE Restaurant=''";
             $result = $conn-> query($query);
                 
             
-            echo "<div>
-                <table>
+            echo "<table>
                 <tr>
                     <th> Item ID </th>
                     <th> Name </th>
@@ -139,9 +138,12 @@
             }
             
             $output .='
+            </table>
             </div>'
 ?>
+
                             </div>
+                        </div>
                     </div><!--end tabs-->
                 </div>
                 <div class="col-md-6 text-center">
@@ -151,15 +153,14 @@
 
         <div class="testimonials">
             <div class="container">
-                
-              
+
             </div>
         </div><!--testimonials end-->
-
+          
         <div class="cta-skin contact-info">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 margin-b-30">
+                    <div class="col-md-6 margin-b-30">
                         <i class="ion-email"></i>
                         <div class="overflow-hidden">
                             <h4>Email</h4>

@@ -53,7 +53,7 @@
 		public function logout()
 		{
 			$this->load->view('user/exit');
-			unset($_SESSION);
+			$this->session->sess_destroy();
 		}
 		
 		public function __construct()
@@ -61,8 +61,9 @@
 			//call CodeIgniter's default Constructor
 			parent::__construct();
 	
-			//load database library manually
+			//load library manually
 			$this->load->database();
+			$this->load->library('session');
 	
 			//load Model
 			$this->load->model('Insertdata');
@@ -96,7 +97,6 @@
 					$uPass=$this->input->post('pass'),
 					$t="Student",
 					$s="0",
-					$img="xyz",
 					$p=password_hash($uPass, PASSWORD_BCRYPT)
 				);
 
@@ -114,16 +114,56 @@
 			$this->db->from('users');
 			$this->db->where(array ('ID' => $u));
 			$query = $this->db->get();
+			$queryResult = $query->result_array();
+			foreach ($queryResult as $users){
+				$userType = $users['Type'];
+			}
 
 			$user = $query ->row();
 				if ($user)
 				{
 					if(password_verify($_POST['password'], $user->Password))
 					{
-						echo "Successful Login";
-						$_SESSION['user_logged'] = TRUE;
-						$_SESSION['userID'] = $user->username;
-						redirect("Users/dash");
+						//echo "Successful Login";
+						if($userType === "User"){
+							foreach ($queryResult as $users){
+								$userType  = $users['Type'];
+								$userID= $users['ID'];
+								$userName = $users['Name'];
+								$userEmail = $users['Email'];
+								$userGender = $users['Gender'];
+							}
+							
+							$userArray = array(
+								'name' => $userName,
+								'id' => $userID,
+								'gender'=> $userGender,
+								'type' => $userType,
+								'email' => $userEmail
+							);
+							$this->session->set_userdata($userArray);						
+							redirect("Users/dash");
+							
+						}
+						else{
+							foreach ($queryResult as $users){
+								$userType  = $users['Type'];
+								$userID= $users['ID'];
+								$userName = $users['Name'];
+								$userEmail = $users['Email'];
+								$userGender = $users['Gender'];
+							}
+							
+							$userArray = array(
+								'name' => $userName,
+								'id' => $userID,
+								'gender'=> $userGender,
+								'type' => $userType,
+								'email' => $userEmail
+							);
+							$this->session->set_userdata($userArray);
+							redirect("Restaurant/view");
+						}
 					}
 					else
 					{
@@ -136,7 +176,20 @@
 				}
 		}
 
+		public function addtocart()
+		{
+			$this->load->library('cart');
+			$this->cart;
+			$this->load->model('insert');
 
+			$data = array (
+				$i=$this->input->post('ItemID'),
+				$n=$this->input->post('Name'),
+				$p=$this->input->post('Price')
+			);
+		
+		$this->cart->insert($data);
+		}
 
 	}
 ?>

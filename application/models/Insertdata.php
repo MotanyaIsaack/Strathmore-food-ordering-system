@@ -11,10 +11,9 @@ class Insertdata extends CI_Model
 			$uPass=$this->input->post('pass'),
 			$t="Student",
 			$s="0",
-			$img="xyz",
 			$p=password_hash($uPass, PASSWORD_BCRYPT)
 		);
-	$query="insert into users values('$i','$n','$e','$g','$p','$t','$s','$img')";
+	$query="insert into users values('$i','$n','$e','$g','$p','$t','$s')";
 	$this->db->query($query);
 
 	echo "Records Inserted Successfully!";
