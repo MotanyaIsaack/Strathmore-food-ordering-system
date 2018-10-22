@@ -9,6 +9,7 @@
         <title>Shawarma Menu</title>
         <!-- Bootstrap -->
         <link href="<?php echo base_url()?>assets/css/plugins/plugins.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!--slider revolution-->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/revolution/css/settings.css"> 
         <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/revolution/css/layers.css">
@@ -126,8 +127,9 @@
             $output = '';
             $this->load->database();
             $conn = mysqli_connect ("localhost","root","","softwareengineering");
-            $query = "SELECT ItemID,Name,Price from menu WHERE RestaurantID='3'";
+            $query = "SELECT ItemID,Name,Price from menu WHERE RestaurantID='1'";
             $result = $conn-> query($query);
+            $i="ItemID";
                 
             
             echo "<table>
@@ -142,7 +144,7 @@
             {
                 while ($row = $result-> fetch_assoc())
                     {
-                        echo "<tr><td>".$row["ItemID"]."</td><td>".$row["Name"]."</td><td>".$row["Price"]."</td><td>"."<form action='<?php echo base_url()?>users/addtocart' method='post' name=add_cart class='btn btn-primary'>+</td></tr>";
+                        echo "<tr><td>".$row["ItemID"]."</td><td>".$row["Name"]."</td><td>".$row["Price"]."</td><td>"."<form action='<?php echo base_url()?>users/addtocart'.$i method='post' name=add_cart class='btn btn-primary'>+</td></tr>";
                     }
                 
                 echo "</table>";
@@ -209,6 +211,12 @@
         <!-- jQuery plugins-->
         <script src="assets/js/plugins/plugins.js"></script>
         <script src="assets/js/template-custom.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            $("add_cart").click(function(){
+                window.alert("added");
+            });
+
+        </script>
     </body>
 
 <!-- Mirrored from bootstraplovers.com/bootstrap4/resto-2.2/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Oct 2018 10:41:38 GMT -->
