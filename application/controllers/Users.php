@@ -68,7 +68,10 @@
 			//load Model
 			$this->load->model('Insertdata');
 		}
- 
+		
+		/*
+		 * Function that deals with the registration of Students
+		 */
 		public function form_validation()
 		{
 			$this->load->library('form_validation');
@@ -96,7 +99,7 @@
 					$g=$this->input->post('sex'),
 					$uPass=$this->input->post('pass'),
 					$t="Student",
-					$s="0",
+					$s="1",
 					$p=password_hash($uPass, PASSWORD_BCRYPT)
 				);
 
