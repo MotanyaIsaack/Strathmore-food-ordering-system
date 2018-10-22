@@ -67,6 +67,7 @@
 	
 			//load Model
 			$this->load->model('Insertdata');
+			$this->load->model('user_model');
 		}
 		
 		/*
@@ -138,11 +139,11 @@
 							}
 							
 							$userArray = array(
-								'name' => $userName,
-								'id' => $userID,
-								'gender'=> $userGender,
-								'type' => $userType,
-								'email' => $userEmail
+								'Name' => $userName,
+								'ID' => $userID,
+								'Gender'=> $userGender,
+								'Type' => $userType,
+								'Email' => $userEmail
 							);
 							$this->session->set_userdata($userArray);						
 							redirect("Users/dash");
