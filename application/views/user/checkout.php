@@ -89,9 +89,8 @@
                                 <table class="table">
                                     <tbody>
                                         <tr>
-
-                                            <td class="text-color"><strong>Total</strong></td>
-                                            <td class="text-color"><strong>$31.00</strong></td>
+                                            <td class="right"><strong>Total</strong></td>
+                                            <td class="right">Ksh.<?php echo $this->cart->format_number($this->cart->total()); ?></td>
                                         </tr>
                                     </tbody></table>
                             </div>
@@ -102,9 +101,6 @@
                                 <li>
                                     <input type="radio" name="paymentmethod" id="cheque" checked class="iradio_minimal-red"><label for="cheque"> Mpesa</label>
                                     <br>
-                                </li>
-                                <li>
-                                    <input type="radio" name="paymentmethod" id="paypal" class="iradio_minimal-red"><label for="paypal"> Paypal <img src="assets/images/paypal.jpg" alt="" width="90"></label>
                                 </li>
                                 <li>
                                     <input type="radio" name="paymentmethod" id="cash" class="iradio_minimal-red"><label for="cash"> Cash <img src="assets/images/paypal.jpg" alt="" width="90"></label>

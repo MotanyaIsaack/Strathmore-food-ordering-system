@@ -106,42 +106,20 @@
                                     </div>
                                 <div>
 <!-- To display menu from database -->
-<?php
-            $output = '';
-            $this->load->database();
-            $conn = mysqli_connect ("localhost","ordering","system","softwareengineering");
-            $query = "SELECT ItemID,Name,Value,Price from menu WHERE Restaurant=''";
-            $result = $conn-> query($query);
-                
-            
-            echo "<table>
-                <tr>
-                    <th> Item ID </th>
-                    <th> Name </th>
-                    <th> Value </th>
-                    <th> Price </th>
-                    <th> Add to Cart </th>
-                </tr>";
-            if ($result)
-            {
-                while ($row = $result-> fetch_assoc())
-                    {
-                        echo "<tr><td>".$row["ItemID"]."</td><td>".$row["Name"]."</td><td>".
-                        $row["Value"]."</td><td>".$row["Price"]."</td><td>"."<a href='#' onclick=alert('Added') name=add_cart class='btn btn-primary'>+</td></tr>";
-                    }
-                
-                echo "</table>";
-            }
-            else
-            {
-                echo "0 result";
-            }
-            
-            $output .='
-            </table>
-            </div>'
-?>
 
+
+<?php
+
+    $this->load->library('table');
+    $this->table->set_heading('ID','Name','Price','Quantity','Add to Cart');
+    if(is_array($result)){
+        foreach ($result as $p) {
+            $this->table->add_row($p->ItemID, $p->Name, $p->Price, $p->Quantity, anchor('users/buy/'.$p->ItemID,'Add to Cart')); }
+    }        
+    $this->table->set_template(array('table_open'=> '<table border="1" cellpadding="2" cellspacing="1">'));
+    echo $this->table->generate();
+
+?>
                             </div>
                         </div>
                     </div><!--end tabs-->

@@ -25,6 +25,9 @@
                 text-align: left;
                 margin-left:300px;
             }
+            td {
+                
+            }
         </style>
     </head>
     <body>
@@ -81,41 +84,60 @@
     <hr width=660px;>
     <hr width=260px;><br>
                             
-            <table>
-                <tr>
-                    <th> Cart ID </th>
-                    <th> Item ID </th>
-                    <th> Price </th>
-                    <th> Remove Item from Cart</th>
-                </tr>
-            </table>
- 
-<?php
-            $output = '';
-            $this->load->database();
-            $conn = mysqli_connect ("localhost","root","","softwareengineering");
-            $query = "SELECT CartID,ItemID,Price from cart";
-            $result = $conn-> query($query);
+    <?php echo form_open('users/update'); ?>
 
+<table cellpadding="6" cellspacing="1" style="width:60%" border="1">
 
-            if ($result -> num_rows > 0)
-            {
-                echo "<table>";
+<tr>
+        <th>Delete</th>
+        <th>Quantity</th>
+        <th>Item Description</th>
+        <th style="text-align:right">Item Price</th>
+        <th style="text-align:right">Sub-Total</th>
+</tr>
 
-                while ($row = $result-> fetch_assoc())
-                    {
-                        echo "<tr><td>".$row["CartID"]."</td><td>".$row["ItemID"]."</td><td>".
-                        $row["Price"]."</td><td>"."<a href='#' class='btn btn-primary'><></td></tr>";
-                    }
-                
-                echo "</table>";
-            }
-            else
-            {
-                echo "0 result";
-            }
-            
-?>
+<?php $i = 1; ?>
+<?php foreach ($this->cart->contents() as $items): ?>
+
+        <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
+
+        <tr>
+                <td align="center"><?php echo anchor('users/delete/'.$items['rowid'], 'X'); ?></td>
+                <td align="center"><?php echo form_input(array('name' => 'qty'.$i, 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td>
+                <td>
+                        <?php echo $items['name']; ?>
+
+                         <?php if ($this->cart->has_options($items['rowid']) == TRUE): ?>
+
+                                <p>
+                                        <?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value): ?>
+
+                                                <strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
+
+                                        <?php endforeach; ?>
+                                </p>
+
+                        <?php endif; ?>
+
+                </td>
+                <td style="text-align:right"><?php echo $this->cart->format_number($items['price']); ?></td>
+                <td style="text-align:right">Ksh.<?php echo $this->cart->format_number($items['subtotal']); ?></td>
+        </tr>
+
+<?php $i++; ?>
+
+<?php endforeach; ?>
+
+<tr>
+        <td colspan="3"> </td>
+        <td class="right"><strong>Total</strong></td>
+        <td class="right">Ksh.<?php echo $this->cart->format_number($this->cart->total()); ?></td>
+</tr>
+
+</table><br>
+
+<p align="center"><?php echo form_submit('', 'Update your Cart'); ?></p>
+<?php form_close(); ?>
 
                              <div class="col-md-7 margin-b-30">
                                  <div class="cart-buttons text-right">
