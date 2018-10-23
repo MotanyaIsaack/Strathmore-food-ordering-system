@@ -3,10 +3,11 @@
 	class Users extends CI_Controller
 	{
 		public function view(){
-
+			
 			$this->load->view('templates/header');
 			$this->load->view('user/login');
 			$this->load->view('templates/footer');
+			
 		}
 
 		public function register(){
@@ -121,9 +122,9 @@
 				$u=$this->input->post("userId");
 				$p=$this->input->post("password");
 
-			$this->HomeModel->login($u, $p);
+				$this->HomeModel->login($u,$p);
 		}
-
+			
 		public function buy($id)
         {
 			$this->load->model('cartmodel');

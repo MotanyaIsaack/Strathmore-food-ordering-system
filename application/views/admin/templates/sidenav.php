@@ -6,10 +6,10 @@
                     <!-- User profile image -->
                     <div class="profile-img"> <img src="<?= base_url();?>assets/admin/assets/images/users/profile.png" alt="user" /> </div>
                     <!-- User profile text-->
-                    <div class="profile-text"> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Markarn Doe</a>
+                    <div class="profile-text"> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><?= $this->session->userdata('Name');?></a>
                         <div class="dropdown-menu animated flipInY">
-                            <a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
-                            <div class="dropdown-divider"></div> <a href="pages-login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+                            <!-- <a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a> -->
+                            <div class="dropdown-divider"></div> <a href="<?= base_url();?>admin/logout" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
             <div class="sidebar-footer">
                
                 <!-- item-->
-                <a href="#" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+                <a href="<?= base_url();?>admin/logout" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
             </div>
             <!-- End Bottom points-->
         </aside>

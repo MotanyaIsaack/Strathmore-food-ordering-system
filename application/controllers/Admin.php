@@ -6,14 +6,20 @@
             $this->load->model('admin_model');
         }
         public function overview(){
-            $data['count_restaurants'] = $this->admin_model->count_restaurants();
-            $data['count_students'] = $this->admin_model->count_students();
+            if($this->session->userdata('Name')){
+                $data['count_restaurants'] = $this->admin_model->count_restaurants();
+                $data['count_students'] = $this->admin_model->count_students();
 
-            $this->load->view('admin/templates/header');
-            $this->load->view('admin/templates/top-header');
-            $this->load->view('admin/templates/sidenav');
-            $this->load->view('admin/overview',$data);
-            $this->load->view('admin/templates/footer');
+                $this->load->view('admin/templates/header');
+                $this->load->view('admin/templates/top-header');
+                $this->load->view('admin/templates/sidenav');
+                $this->load->view('admin/overview',$data);
+                $this->load->view('admin/templates/footer');
+            }else{
+                echo "<script>console.log( 'Debug Objects: " . $this->session->userdata('id') . "' );</script>";
+                redirect('users/view');
+            }
+            
         }
         public function restaurants(){
 
@@ -84,6 +90,10 @@
                 }
                 redirect('admin/restaurants');
             }
+        }
+        public function logout(){
+            $this->session->unset_userdata(array('ID','Name','Gender','Type','Email'));
+            redirect(base_url());
         }
     }
 
