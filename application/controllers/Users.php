@@ -111,7 +111,9 @@
 
 			}
 		}
-
+		/*
+		 *	Function that grants users access levels depending on their user types
+		 */
 		public function login()
 		{
 			$u=$this->input->post("userId");
@@ -132,7 +134,7 @@
 					if(password_verify($_POST['password'], $user->Password))
 					{
 						//echo "Successful Login";
-						if($userType === "User"){
+						if($userType === "Student"){
 							foreach ($queryResult as $users){
 								$userType  = $users['Type'];
 								$userID= $users['ID'];
@@ -198,7 +200,7 @@
 
 				}
 				else {
-					echo "Sorry. No login";
+					redirect("users/view");
 				}
 		}
 
