@@ -95,7 +95,7 @@
                                 Active Orders
                             </div>
                             <div class="card-content" id="card-link-content">
-                                <span>$active-orders</span>
+                                <span>View Active Orders</span>
                             </div>
                         </div>
                     </a>

@@ -87,7 +87,7 @@
                                             <td>Ksh. 100</td>
                                             <td class="left-align">
                                                 <a href="" title="Order is ready"><i class="menu-edit-icon material-icons">check</i></a>
-                                                <a href="" title="Delete Order"><i class="menu-delete-icon material-icons">delete</i></a>
+                                                <!-- <a href="" title="Delete Order"><i class="menu-delete-icon material-icons">delete</i></a> -->
                                             </td>
                                         </tr>
                                     </tbody>
