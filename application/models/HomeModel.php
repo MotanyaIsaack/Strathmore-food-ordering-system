@@ -105,11 +105,11 @@ class HomeModel extends CI_Model
 					}
 					else
 					{
-						echo "Invalid Password";
+						redirect('users/view');
 					}
 				}
 				else {
-					echo "Sorry. No login";
+					redirect('users/view');
 				}
         }
     }
