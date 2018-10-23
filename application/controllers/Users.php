@@ -47,13 +47,16 @@
 
 		public function rest()
 		{
-			$this->load->view('user/restaurant-menu');
+			$this->load->model('cartmodel');
+			$data['result'] = $this->cartmodel->findAll();
+			$this->load->view('user/restaurant-menu', $data);
 		}
 		
 		public function logout()
 		{
 			$this->load->view('user/exit');
 			$this->session->sess_destroy();
+			$this->cart->destroy();
 		}
 		
 		public function __construct()
@@ -61,14 +64,17 @@
 			//call CodeIgniter's default Constructor
 			parent::__construct();
 	
-			//load library manually
+			//load libraries manually
 			$this->load->database();
 			$this->load->library('session');
 	
 			//load Model
 			$this->load->model('Insertdata');
 		}
- 
+		
+		/*
+		 * Function that deals with the registration of Students
+		 */
 		public function form_validation()
 		{
 			$this->load->library('form_validation');
@@ -96,7 +102,7 @@
 					$g=$this->input->post('sex'),
 					$uPass=$this->input->post('pass'),
 					$t="Student",
-					$s="0",
+					$s="1",
 					$p=password_hash($uPass, PASSWORD_BCRYPT)
 				);
 
@@ -125,7 +131,7 @@
 					if(password_verify($_POST['password'], $user->Password))
 					{
 						//echo "Successful Login";
-						if($userType === "User"){
+						if($userType === "Student"){
 							foreach ($queryResult as $users){
 								$userType  = $users['Type'];
 								$userID= $users['ID'];
@@ -195,19 +201,37 @@
 				}
 		}
 
-		public function addtocart()
-		{
-			$this->load->library('cart');
-			$this->cart;
-			$this->load->model('insert');
-
-			$data = array (
-				$i=$this->input->post('ItemID'),
-				$n=$this->input->post('Name'),
-				$p=$this->input->post('Price')
+		public function buy($id)
+        {
+			$this->load->model('cartmodel');
+			$product = $this->cartmodel->find($id);
+			$data = array(
+				'id'   => $product->ItemID,
+				'qty'     => $product->Quantity,
+				'price'   => $product->Price,
+				'name'    => $product->Name,
 			);
-		
-		$this->cart->insert($data);
+			$this->cart->insert($data);
+			$this->load->view('user/cart');
+
+			// $this->cartmodel->insert($data);	   WAS TRYING TO USE THIS TO SEND TO DB
+        }
+
+		public function delete($rowid)
+		{
+			$this->cart->update(array('rowid' => $rowid, 'qty' => 0));
+			$this->load->view('user/cart');
+		}
+
+		public function update()
+		{
+			$i = 1;
+			foreach ($this->cart->contents() as $items)
+				{
+					$this->cart->update(array('rowid' => $items['rowid'], 'qty' => $_POST['qty'.$i]));
+					$i++;
+				}
+				$this->load->view('user/cart');
 		}
 
 	}

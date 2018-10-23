@@ -89,7 +89,7 @@
                                     <!-- <th>Item ID</th> -->
                                     <th>Item Name</th>
                                     <th>Item Price</th>
-                                    <th>Action</th>
+                                    <!-- <th>Action</th> -->
                                 </thead>
                                 <tbody>
                                     <?php
@@ -101,10 +101,10 @@
                                             <?php $id = $row->ItemID;?>
                                             <td><?php echo $row->Name;?></td>
                                             <td>Ksh <?php echo $row->Price?></td> 
-                                            <td class="left-align">
+                                            <!-- <td class="left-align">
                                             <a href="<?php echo base_url()."restaurant/viewMenu#edit-menu?id='$id'"?>" onclick ="$('#edit-menu').modal('open')" title="Edit Menu Item"><i class="menu-edit-icon material-icons">edit</i></a>
-                                            <!-- <a href="" title="Delete Menu Item"><i class="menu-delete-icon material-icons">delete</i></a> -->
-                                            </td>                                          
+                                            <a href="" title="Delete Menu Item"><i class="menu-delete-icon material-icons">delete</i></a>
+                                            </td>                                           -->
                                             </tr>
                                     <?php
                                         }
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="modal" id="edit-menu">
+                <!-- <div class="modal" id="edit-menu">
                     <div class="modal-content">
                         <div class="row">
                             <div class="col s8 m8 l8 left-align">
@@ -195,7 +195,7 @@
                         </div>
                         </form>
                     </div>
-                </div>
+                </div> -->
             </div>
             
     </div>
