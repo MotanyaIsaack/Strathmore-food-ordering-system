@@ -91,6 +91,8 @@
                                         <tr>
                                             <td class="right"><strong>Total</strong></td>
                                             <td class="right">Ksh.<?php echo $this->cart->format_number($this->cart->total()); ?></td>
+                                            
+                                            
                                         </tr>
                                     </tbody></table>
                             </div>
@@ -106,7 +108,7 @@
 
                             <div class="text-center">
                                 <hr>
-                                <input name="submit" onclick="return confirm('Your order has been submitted. Thank you for using Eatplicity. ')" type="button" value="Submit order" class="btn btn-primary btn-xl btn-block">
+                                <input name="submit" action="<?= base_url();?>cartmodel/insert" type="button" value="Submit order" class="btn btn-primary btn-xl btn-block">
                             </div>
 
                         </div>
