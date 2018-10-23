@@ -70,6 +70,7 @@
 	
 			//load Model
 			$this->load->model('Insertdata');
+			$this->load->model('user_model');
 		}
 		
 		/*
@@ -110,20 +111,15 @@
 
 			}
 		}
-
+		/*
+		 *	Function that grants users access levels depending on their user types
+		 */
 		public function login()
 		{
-			$u=$this->input->post("userId");
-			$p=$this->input->post("password");
-
-			$this->db->select('*');
-			$this->db->from('users');
-			$this->db->where(array ('ID' => $u));
-			$query = $this->db->get();
-			$queryResult = $query->result_array();
-			foreach ($queryResult as $users){
-				$userType = $users['Type'];
-			}
+			$this->load->model('HomeModel');
+			
+				$u=$this->input->post("userId");
+				$p=$this->input->post("password");
 
 			$user = $query ->row();
 				if ($user)
