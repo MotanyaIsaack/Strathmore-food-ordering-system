@@ -17,39 +17,74 @@
 	
 		public function dash()
 		{
+			if($this->session->userdata('id')){
 			$this->load->view('user/student-dash');
+			}
+			else{
+				redirect('Users/view');
+			}
 		}
 	
 		public function tonis()
 		{
+			if($this->session->userdata('id')){
 			$this->load->view('user/tonis');
+			}
+			else{
+				redirect('Users/view');
+			}
 		}
 
 		public function lolanes()
 		{
-			$this->load->view('user/lolanes');
+			if($this->session->userdata('id')){
+				$this->load->view('user/lolanes');
+			}
+			else{
+				redirect('Users/view');
+			}
 		}
 
 		public function shawarma()
 		{
+			if($this->session->userdata('id')){
 			$this->load->view('user/shawarma');
+			}
+			else{
+				redirect('Users/view');
+			}
 		}
 
 		public function cart()
 		{
+			if($this->session->userdata('id')){
 			$this->load->view('user/cart');
+			}
+			else{
+				redirect('Users/view');
+			}
 		}
 
 		public function checkout()
 		{
-			$this->load->view('user/checkout');
+			if($this->session->userdata('id')){
+				$this->load->view('user/checkout');
+			}
+			else{
+				redirect('Users/view');
+			}
 		}
 
 		public function rest()
 		{
+			if($this->session->userdata('id')){
 			$this->load->model('cartmodel');
 			$data['result'] = $this->cartmodel->findAll();
 			$this->load->view('user/restaurant-menu', $data);
+			}
+			else{
+				redirect('Users/view');
+			}
 		}
 		
 		public function logout()
