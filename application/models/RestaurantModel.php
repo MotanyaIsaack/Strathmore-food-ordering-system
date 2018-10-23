@@ -30,6 +30,6 @@
             //$this->db->set('Name',$newname);
             $this->db->where('RestaurantID', $rID);
             $this->db->update('restaurants',$newName);
-        }
+        }    
     }
 ?>
