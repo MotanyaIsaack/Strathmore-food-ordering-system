@@ -10,7 +10,7 @@
         
         public function addMenu($food, $price){
             $rID= $this->session->userdata('rID');
-            $query =  "INSERT INTO menu VALUES ('','$food','$rID','$price')";
+            $query =  "INSERT INTO menu VALUES ('','$food','1','$rID','$price')";
             $this->db->query($query);
             
         }
