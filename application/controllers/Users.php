@@ -156,5 +156,10 @@
 				$this->load->view('user/cart');
 		}
 
+		public function order()
+		{
+			
+		}
+
 	}
 ?>
