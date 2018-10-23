@@ -99,52 +99,8 @@
                     <div>
 
                         <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active show fade" id="drink">
-                                <ul class="list-unstyled">
-                                    <li class="menu-box clearfix margin-b-20">
-                                        <div class="menu-content">
-                                            <h4><a href="<?php echo base_url()?>users/tonis">TONI'S</a>
-                                                <span>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                </span>
-                                            </h4>
-                                            <p>Can't have a feast without Toni's</p>
-                                        </div>
-                                        
-                                    </li><!--end menu box-->
-                                    <li class="menu-box clearfix margin-b-20">
-                                        <div class="menu-content">
-                                            <h4><a href="<?php echo base_url()?>users/lolanes">LOLANES</a>     
-                                                <span>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                </span>
-                                            </h4>
-                                            <p>We have everything you need from ice cream to bhajias</p>
-                                        </div>
-                                    </li><!--end menu box-->
-                                    <li class="menu-box clearfix margin-b-20">
-                                        <div class="menu-content">
-                                            <h4><a href="<?php echo base_url()?>users/shawarma">SHAWARMA</a> 
-                                                <span>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                    <i class="ion-star"></i>
-                                                </span>
-                                           </h4>
-                                            <p>We are known for our world class Shawarma</p>
-                                        </div>
-                                    </li><!--end menu box-->
-                                    <li class="menu-box clearfix margin-b-20">
+                        
+                                    <!-- <li class="menu-box clearfix margin-b-20"> -->
                                     <div class="menu-content">
                                     
 <?php
@@ -171,7 +127,7 @@
                                     
                                     </div>
                                     </li>
-                                    <li class="menu-box clearfix margin-b-20">
+                                    <!-- <li class="menu-box clearfix margin-b-20"> -->
                                         <div class="thumb">
                                             <img src="assets/images/img-6.jpg" width="70" class="img-fluid" alt="">
                                         </div>
