@@ -18,7 +18,7 @@
 	
 		public function dash()
 		{
-			if($this->session->userdata('id')){
+			if($this->session->userdata('ID')){
 			$this->load->view('user/student-dash');
 			}
 			else{
@@ -28,7 +28,7 @@
 	
 		public function tonis()
 		{
-			if($this->session->userdata('id')){
+			if($this->session->userdata('ID')){
 			$this->load->view('user/tonis');
 			}
 			else{
@@ -38,7 +38,7 @@
 
 		public function lolanes()
 		{
-			if($this->session->userdata('id')){
+			if($this->session->userdata('ID')){
 				$this->load->view('user/lolanes');
 			}
 			else{
@@ -48,7 +48,7 @@
 
 		public function shawarma()
 		{
-			if($this->session->userdata('id')){
+			if($this->session->userdata('ID')){
 			$this->load->view('user/shawarma');
 			}
 			else{
@@ -58,7 +58,7 @@
 
 		public function cart()
 		{
-			if($this->session->userdata('id')){
+			if($this->session->userdata('ID')){
 			$this->load->view('user/cart');
 			}
 			else{
@@ -68,7 +68,7 @@
 
 		public function checkout()
 		{
-			if($this->session->userdata('id')){
+			if($this->session->userdata('ID')){
 				$this->load->view('user/checkout');
 			}
 			else{
@@ -78,7 +78,7 @@
 
 		public function rest()
 		{
-			if($this->session->userdata('id')){
+			if($this->session->userdata('ID')){
 			$this->load->model('cartmodel');
 			$data['result'] = $this->cartmodel->findAll();
 			$this->load->view('user/restaurant-menu', $data);
