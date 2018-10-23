@@ -6,7 +6,7 @@ class HomeModel extends CI_Model
 		parent::__construct();
 	}
 
-    public function login($u,$p)
+    public function login($u,$p)   //login model
 		{
 			$u=$this->input->post("userId");
             $p=$this->input->post("password");

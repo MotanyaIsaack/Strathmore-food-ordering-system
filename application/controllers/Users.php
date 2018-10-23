@@ -43,6 +43,8 @@
 		public function checkout()
 		{
 			$this->load->view('user/checkout');
+			// $this->load->model('cartmodel');
+			// $this->cartmodel->insert();
 		}
 
 		public function rest()
@@ -112,7 +114,7 @@
 			}
 		}
 
-		public function login()
+		public function login()   //login controller
 		{
 			$this->load->model('HomeModel');
 			
@@ -133,9 +135,7 @@
 				'name'    => $product->Name,
 			);
 			$this->cart->insert($data);
-			$this->load->view('user/cart');
-
-			// $this->cartmodel->insert($data);	   WAS TRYING TO USE THIS TO SEND TO DB
+			$this->load->view('user/cart');	
         }
 
 		public function delete($rowid)

@@ -20,7 +20,7 @@ class cartmodel extends CI_Model
 
 	}
 
-	// function insert($data)
+	// function insert()
 	// {
 	// 	$this->load->model('cartmodel');
 	// 	$product = $this->cartmodel->find($id);
@@ -28,13 +28,13 @@ class cartmodel extends CI_Model
 	// 		$data = array(
 	// 			'id'   => $product->ItemID,
 	// 			'qty'     => $product->Quantity,
-	// 			'price'   => $product->Price,            THE FUNCTION I WAS USING TO INPUT TO DB
+	// 			'price'   => $product->Price,          
 	// 			'name'    => $product->Name,
 	// 			$cart = "",
 	// 			$pay = "0",
 	// 			$order = "0"
 	// 		);
-	// 	$query="insert into cart values('id','qty','price','name','$cart','$pay','$order')";
+	// 	$query="insert into cart(ItemID,Quantity,Price,Name,CartID,PaymentStatus,OrderStatus) values('id','qty','price','name','$cart','$pay','$order')";
 	// 	$this->db->query($query);
 	// }
 }

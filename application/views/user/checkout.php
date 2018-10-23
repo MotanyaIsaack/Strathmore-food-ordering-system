@@ -99,22 +99,14 @@
                             <h4> Payment Method? </h4><br>
                             <ul class=" list-unstyled">
                                 <li>
-                                    <input type="radio" name="paymentmethod" id="cheque" checked class="iradio_minimal-red"><label for="cheque"> Mpesa</label>
-                                    <br>
-                                </li>
-                                <li>
                                     <input type="radio" name="paymentmethod" id="cash" class="iradio_minimal-red"><label for="cash"> Cash <img src="assets/images/paypal.jpg" alt="" width="90"></label>
                                 </li>
                             </ul>
                             <div class="space-30"></div>
-                            <p>
-                                <input type="checkbox" name="agree" id="agree">
-                                <label for="agree">Accept our <a href="javascript:void(0)">Terms &  Condition</a></label>
-                            </p>
 
                             <div class="text-center">
                                 <hr>
-                                <input name="submit" onclick="return  confirm('Your order has been submitted. Thank you for using Eatplicity. ')" type="button" value="Submit order" class="btn btn-primary btn-xl btn-block">
+                                <input name="submit" onclick="return confirm('Your order has been submitted. Thank you for using Eatplicity. ')" type="button" value="Submit order" class="btn btn-primary btn-xl btn-block">
                             </div>
 
                         </div>
