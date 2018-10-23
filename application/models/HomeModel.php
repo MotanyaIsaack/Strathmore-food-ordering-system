@@ -45,7 +45,7 @@ class HomeModel extends CI_Model
 							redirect("Users/dash");
 							
 						}
-						else{
+						elseif($userType === "Restaurant Owner"){
 							$this->db->select("*");
 							$this->db->from('restaurants');
 							$this->db->where(array ('OwnerID' => $u));
@@ -82,6 +82,25 @@ class HomeModel extends CI_Model
 							);
 							$this->session->set_userdata($userArray);
 							redirect("Restaurant/view");
+						}else if($userType === "Administrator"){
+							foreach ($queryResult as $users){
+								$userType  = $users['Type'];
+								$userID= $users['ID'];
+								$userName = $users['Name'];
+								$userEmail = $users['Email'];
+								$userGender = $users['Gender'];
+							}
+							
+							$userArray = array(
+								'Name' => $userName,
+								'ID' => $userID,
+								'Gender'=> $userGender,
+								'Type' => $userType,
+								'Email' => $userEmail
+							);
+							$this->session->set_userdata($userArray);						
+							redirect("admin/overview");
+							
 						}
 					}
 					else
