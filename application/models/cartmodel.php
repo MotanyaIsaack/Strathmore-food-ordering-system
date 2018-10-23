@@ -20,22 +20,31 @@ class cartmodel extends CI_Model
 
 	}
 
-	// function insert()
-	// {
-	// 	$this->load->model('cartmodel');
-	// 	$product = $this->cartmodel->find($id);
+	function insert()
+	{
+		$this->load->model('cartmodel');
+		// $this->cart->;
+		foreach ($this->cart->contents() as $items): 
+			$id = $items['id'];
+			$Name = $items['name'];
+			$Quantity = $items['qty'];
+			$Price = $items['price'];
 
-	// 		$data = array(
-	// 			'id'   => $product->ItemID,
-	// 			'qty'     => $product->Quantity,
-	// 			'price'   => $product->Price,          
-	// 			'name'    => $product->Name,
-	// 			$cart = "",
-	// 			$pay = "0",
-	// 			$order = "0"
-	// 		);
-	// 	$query="insert into cart(ItemID,Quantity,Price,Name,CartID,PaymentStatus,OrderStatus) values('id','qty','price','name','$cart','$pay','$order')";
-	// 	$this->db->query($query);
-	// }
+			$data = array(
+				'ItemID' => $id,
+				'Quantity' => $Quantity,
+				'Price' => $Price,
+				'Name' => $Name,
+				'OrderStatus' =>0
+			);
+			print_r($data);
+			$insert = $this->db->insert('cart',$data);
+			return $insert;
+
+		endforeach; 
+
+		// $query="Insert into cart (ItemID,Quantity,Price,Name,CartID,PaymentStatus,OrderStatus) values('id','qty','price','name','$cart','$pay','$order')";
+		// $this->db->query($query);
+	}
 }
 ?>

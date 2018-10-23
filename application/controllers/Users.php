@@ -44,8 +44,29 @@
 		public function checkout()
 		{
 			$this->load->view('user/checkout');
-			// $this->load->model('cartmodel');
-			// $this->cartmodel->insert();
+			foreach ($this->cart->contents() as $items): 
+				$id = $items['id'];
+				$Name = $items['name'];
+				$Quantity = $items['qty'];
+				$Price = $items['price'];
+	
+				$data = array(
+					'ItemID' => $id,
+					'Quantity' => $Quantity,
+					'Price' => $Price,
+					'Name' => $Name,
+					'OrderStatus' =>0
+				);
+				print_r($data);
+				$insert = $this->db->insert('cart',$data);
+				return $insert;
+	
+			endforeach;
+			
+			// print_r($this->session->userdata('cart_contents','rowid'));
+			//$x = $this->cart->contents;
+			//$this->cartmodel->insert($x);
+
 		}
 
 		public function rest()
@@ -130,11 +151,12 @@
 			$this->load->model('cartmodel');
 			$product = $this->cartmodel->find($id);
 			$data = array(
-				'id'   => $product->ItemID,
+				'id'      => $product->ItemID,
 				'qty'     => $product->Quantity,
 				'price'   => $product->Price,
 				'name'    => $product->Name,
 			);
+			$this->session->set_userdata('PID',$product->ItemID);
 			$this->cart->insert($data);
 			$this->load->view('user/cart');	
         }
@@ -156,10 +178,25 @@
 				$this->load->view('user/cart');
 		}
 
-		public function order()
-		{
-			
-		}
+		// public function finalUpdate(){
+		// 	$i = 1;
+		// 	foreach ($this->cart->contents() as $items)
+		// 		{
+		// 			$this->cart->update(array('rowid' => $items['rowid'], 'qty' => $_POST['qty'.$i]));
+		// 			$data = array(
+		// 				'ItemID' =>$items[]
+		// 			);
+		// 			$i++;
+		// 		}
+		// 		$this->load->view('user/checkout');
+		// }
+
+		// public function order()
+		// {
+		// 	$this->load->model('cartmodel');
+		// 	$product = $this->cartmodel->find($id);
+		// 	$this->cartmodel->insert();
+		// }
 
 	}
 ?>
